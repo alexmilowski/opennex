@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="439.168" height="474" viewBox="0, 0, 439.168, 474">
+   <g id="Layer_1" transform="translate(-76.5, -24.5)">
+      <g>
+         <path d="M405.867,140.693 L438.887,165.242 L438.887,207.761 L405.867,183.213 L405.867,140.693 z" fill="#FFFFFF"/>
+         <path d="M405.867,140.693 L438.887,165.242 L438.887,207.761 L405.867,183.213 L405.867,140.693 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      </g>
+      <g>
+         <path d="M335.001,140.693 L368.02,165.242 L368.02,207.761 L335.001,183.213 L335.001,140.693 z" fill="#FFFFFF"/>
+         <path d="M335.001,140.693 L368.02,165.242 L368.02,207.761 L335.001,183.213 L335.001,140.693 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      </g>
+      <g>
+         <path d="M264.135,140.693 L297.154,165.242 L297.154,207.761 L264.135,183.213 L264.135,140.693 z" fill="#FFFFFF"/>
+         <path d="M264.135,140.693 L297.154,165.242 L297.154,207.761 L264.135,183.213 L264.135,140.693 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      </g>
+      <g>
+         <path d="M193.268,140.693 L226.288,165.242 L226.288,207.761 L193.268,183.213 L193.268,140.693 z" fill="#FFFFFF"/>
+         <path d="M193.268,140.693 L226.288,165.242 L226.288,207.761 L193.268,183.213 L193.268,140.693 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      </g>
+      <g>
+         <path d="M122.402,140.693 L155.422,165.242 L155.422,207.761 L122.402,183.213 L122.402,140.693 z" fill="#FFFFFF"/>
+         <path d="M122.402,140.693 L155.422,165.242 L155.422,207.761 L122.402,183.213 L122.402,140.693 z" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      </g>
+      <text transform="matrix(1, 0, 0, 1, 124.633, 131.193)">
+         <tspan x="-11.731" y="3.5" font-family="Helvetica" font-size="10" fill="#000000">1/24°</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 196.171, 131.193)">
+         <tspan x="-8.95" y="3.5" font-family="Helvetica" font-size="10" fill="#000000">1/8°</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 267.171, 131.193)">
+         <tspan x="-8.95" y="3.5" font-family="Helvetica" font-size="10" fill="#000000">1/4°</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 338.171, 131.193)">
+         <tspan x="-8.95" y="3.5" font-family="Helvetica" font-size="10" fill="#000000">1/2°</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 408.978, 131.193)">
+         <tspan x="-4.78" y="3.5" font-family="Helvetica" font-size="10" fill="#000000">1°</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 96.739, 278.5)">
+         <tspan x="-19.739" y="3.5" font-family="Helvetica" font-size="10" fill="#000000">2006-01/</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 138.218, 308.5)">
+         <tspan x="-4.17" y="3.5" font-family="Helvetica" font-size="10" fill="#000000">5/</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 209.085, 308.5)">
+         <tspan x="-6.951" y="3.5" font-family="Helvetica" font-size="10" fill="#000000">15/</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 279.951, 308.5)">
+         <tspan x="-6.951" y="3.5" font-family="Helvetica" font-size="10" fill="#000000">30/</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 350.817, 308.5)">
+         <tspan x="-6.951" y="3.5" font-family="Helvetica" font-size="10" fill="#000000">60/</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 421.683, 308.5)">
+         <tspan x="-9.731" y="3.5" font-family="Helvetica" font-size="10" fill="#000000">120/</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 444.74, 330)">
+         <tspan x="-31.399" y="3.5" font-family="Helvetica" font-size="10" fill="#000000">partition-1.xml</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 350.817, 330)">
+         <tspan x="-31.399" y="3.5" font-family="Helvetica" font-size="10" fill="#000000">partition-1.xml</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 350.817, 346)">
+         <tspan x="-31.399" y="3.5" font-family="Helvetica" font-size="10" fill="#000000">partition-2.xml</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 350.817, 364)">
+         <tspan x="-31.399" y="3.5" font-family="Helvetica" font-size="10" fill="#000000">partition-3.xml</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 350.817, 382.5)">
+         <tspan x="-31.399" y="3.5" font-family="Helvetica" font-size="10" fill="#000000">partition-4.xml</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 206.075, 357)">
+         <tspan x="-8.059" y="3.5" font-family="Helvetica" font-size="10" fill="#000000">etc.</tspan>
+      </text>
+      <path d="M94.952,293.5 L421.016,293.5" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      <path d="M94.952,294 L94.952,286" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      <path d="M137.917,293.5 L137.917,302.5" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      <path d="M209.585,293.5 L209.585,302.5" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      <path d="M280.451,293.5 L280.451,302.5" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      <path d="M351.317,293.5 L351.317,302.5" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      <path d="M421.016,293.167 L421.016,302.167" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+      <g>
+         <path d="M138.111,203.5 L138.111,218" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+         <path d="M135.111,218 L138.111,226 L141.111,218 z" fill="#000000" fill-opacity="1" stroke="#000000" stroke-width="1" stroke-opacity="1"/>
+      </g>
+      <g>
+         <path d="M209.778,203.5 L209.778,218" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+         <path d="M206.778,218 L209.778,226 L212.778,218 z" fill="#000000" fill-opacity="1" stroke="#000000" stroke-width="1" stroke-opacity="1"/>
+      </g>
+      <g>
+         <path d="M278.144,203.5 L278.144,218" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+         <path d="M275.144,218 L278.144,226 L281.144,218 z" fill="#000000" fill-opacity="1" stroke="#000000" stroke-width="1" stroke-opacity="1"/>
+      </g>
+      <g>
+         <path d="M351.511,203.5 L351.511,218" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+         <path d="M348.511,218 L351.511,226 L354.511,218 z" fill="#000000" fill-opacity="1" stroke="#000000" stroke-width="1" stroke-opacity="1"/>
+      </g>
+      <g>
+         <path d="M422.377,203.5 L422.377,218" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+         <path d="M419.377,218 L422.377,226 L425.377,218 z" fill="#000000" fill-opacity="1" stroke="#000000" stroke-width="1" stroke-opacity="1"/>
+      </g>
+      <text transform="matrix(1, 0, 0, 1, 296.084, 32.75)">
+         <tspan x="-219.584" y="1.75" font-family="Helvetica" font-size="10" fill="#000000">s3://nasanex/NEX-DCP30/.../tasmax_ens-avg_amon_rcp85_CONUS_200601-201012.nc 1 2 3 ...</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 114.52, 56)">
+         <tspan x="-37.52" y="3.5" font-family="Helvetica" font-size="10" fill="#000000">1. Download</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 147.866, 82.75)">
+         <tspan x="-70.866" y="2.25" font-family="Helvetica" font-size="10" fill="#000000">2. For each requested month:</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 185.768, 110)">
+         <tspan x="-108.768" y="2.5" font-family="Helvetica" font-size="10" fill="#000000">2.1. Resize progressively down to 1° resolution</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 253.645, 258.75)">
+         <tspan x="-177.145" y="1.25" font-family="Helvetica" font-size="10" fill="#000000">2.2. Partition resized data and write to disk organized by month and resizing.</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 163.15, 402)">
+         <tspan x="-86.15" y="2.5" font-family="Helvetica" font-size="10" fill="#000000">3. Store partitions into AWS S3</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 245.081, 456)">
+         <tspan x="-150.63" y="-32.5" font-family="Helvetica" font-size="10" fill="#000000">...</tspan>
+         <tspan x="-150.63" y="-20.5" font-family="Helvetica" font-size="10" fill="#000000">s3://milowski-opennex/forward-avg-data/2006-01/60/partition-1.xml</tspan>
+         <tspan x="-150.63" y="-8.5" font-family="Helvetica" font-size="10" fill="#000000">s3://milowski-opennex/forward-avg-data/2006-01/60/partition-2.xml</tspan>
+         <tspan x="-150.63" y="3.5" font-family="Helvetica" font-size="10" fill="#000000">s3://milowski-opennex/forward-avg-data/2006-01/60/partition-3.xml</tspan>
+         <tspan x="-150.63" y="15.5" font-family="Helvetica" font-size="10" fill="#000000">s3://milowski-opennex/forward-avg-data/2006-01/60/partition-4.xml</tspan>
+         <tspan x="-150.63" y="27.5" font-family="Helvetica" font-size="10" fill="#000000">s3://milowski-opennex/forward-avg-data/2006-01/120/partition-1.xml</tspan>
+      </text>
+   </g>
+</svg>
