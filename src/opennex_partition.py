@@ -17,7 +17,7 @@ def sequenceNumber(lat,lon,latSize,lonSize):
    seq = rows*int(math.floor(360/lonSize)) + cols + 1
    return seq
 
-region = [50.0,-124.0,24.0,-66.0]
+region = [50.0,-126.0,24.0,-66.0]
 gridSize = 1/120.0
 # original data region but we shift it from center to the edge of 1/120 degree cells
 # dataRegion = [49.9375,-125.02083333,24.0625,-66.47916667]
@@ -104,7 +104,7 @@ def partition(outDir,year,month,mset,partitionSize):
          xf = open(filename,"w")
          xf.write("<data xmlns='http://milowski.com/opennex/' yearMonth='{0}' resolution='{1:.5f}' sequence='{2}' size='{3}' rows='{4}' cols='{5}'>\n".format(yearMonth,resolution,seq,partitionSize,partition.shape[0],partition.shape[1]))
          xf.write("<table>\n")
-         for row in range(0,partition.shape[0]):
+         for row in reversed(range(0,partition.shape[0])):
             xf.write("<tr>")
             for col in range(0,partition.shape[1]):
                if  partition[row,col] == 0.0:
@@ -182,7 +182,7 @@ def writeSummary(outDir,year,month,partitionSize,summary):
    xf = open(filename,"w")
    xf.write("<data xmlns='http://milowski.com/opennex/' yearMonth='{0}' resolution='{1:.5f}' size='{2}' rows='{3}' cols='{4}'>\n".format(yearMonth,resolution,partitionSize,summary.shape[0],summary.shape[1]))
    xf.write("<table>\n")
-   for row in range(0,summary.shape[0]):
+   for row in reversed(range(0,summary.shape[0])):
       xf.write("<tr>")
       for col in range(0,summary.shape[1]):
          if  summary[row,col] == 0.0:

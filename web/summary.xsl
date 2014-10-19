@@ -28,7 +28,7 @@
             <span property="facet" resource="/data/#latitude"/>
             <span property="facet" resource="/data/#longitude"/>
             <span property="shape" typeof="schema:GeoShape">
-               <span property="schema:box">50 -124 24 -124 50 -66 24 -66</span>
+               <span property="schema:box">50 -126 24 -126 50 -66 24 -66</span>
             </span>
          </span>
          ]
@@ -71,7 +71,7 @@
       <tr>
          <th><xsl:value-of select="$quadSize"/>° lon / <xsl:value-of select="$quadSize"/>° lat</th>
          <xsl:for-each select="(0 to (58 * 120) idiv $size - 1)">
-            <th property="index" typeof="ColumnIndex"><span property="value"><xsl:value-of select="-124.0 + . * $quadSize"/></span>°</th>
+            <th property="index" typeof="ColumnIndex"><span property="value"><xsl:value-of select="-126.0 + . * $quadSize"/></span>°</th>
          </xsl:for-each>
       </tr>
       <xsl:apply-templates/>
