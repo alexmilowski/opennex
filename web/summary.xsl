@@ -11,7 +11,7 @@
 <xsl:variable name="size" select="number(/data:data/@size)"/>
    
 <xsl:template match="data:data">
-   <div typeof="PartitionSummary" resource="/data/{@yearMonth}/{$size}/">
+   <div typeof="PartitionSummary" resource="">
       <xsl:variable name="month" select="substring-after(@yearMonth,'-')"/>
       <xsl:variable name="year" select="substring-before(@yearMonth,'-')"/>
       <xsl:variable name="previous" select="if ($month eq '01') then concat(number($year)-1,'-','12') else concat($year,'-',format-number(number($month)-1,'00'))"/>
@@ -19,14 +19,14 @@
       <h1>Summary of Temperature (<span property="count"><xsl:value-of select="count(data:table/data:tr/data:td[node()])"/></span> quadrangles) </h1>
       <h2>
          <span property="range" typeof="FacetPartition">
-            <span property="facet" resource="/data/#yearMonth"/>
+            <span property="facet" resource="../../../#yearMonth"/>
             <span property="start"><xsl:value-of select="@yearMonth"/></span>
             <span property="length" content="PT1M"/>
          </span>    
          in region [
          <span property="range" typeof="FacetPartition">
-            <span property="facet" resource="/data/#latitude"/>
-            <span property="facet" resource="/data/#longitude"/>
+            <span property="facet" resource="../../../#latitude"/>
+            <span property="facet" resource="../../../#longitude"/>
             <span property="shape" typeof="schema:GeoShape">
                <span property="schema:box">50 -126 24 -126 50 -66 24 -66</span>
             </span>
@@ -34,7 +34,7 @@
          ]
          scale <span property="scale"><xsl:value-of select="$size div 120.0"/></span>
       </h2>
-      <h3><a rel="previous" href="/data/{$previous}/{$size}/" typeof="PartitionSummary">
+      <h3><a rel="previous" href="../../{$previous}/{$size}/" typeof="PartitionSummary">
             <span property="range" typeof="FacetPartition">
                <span property="facet" resource="/data/#yearMonth"/>
                <span property="start"><xsl:value-of select="$previous"/></span>
@@ -42,7 +42,7 @@
             </span>         
          </a>
          <xsl:text> </xsl:text>
-         <a rel="next" href="/data/{$next}/{$size}/" typeof="PartitionSummary">
+         <a rel="next" href="../../{$next}/{$size}/" typeof="PartitionSummary">
             <span property="range" typeof="FacetPartition">
                <span property="facet" resource="/data/#yearMonth"/>
                <span property="start"><xsl:value-of select="$next"/></span>

@@ -30,14 +30,14 @@
    <h1><span property="count"><xsl:value-of select="$count"/></span> Temperature Predictions </h1>
    <h2>
       <span property="range" typeof="FacetPartition">
-         <span property="facet" resource="/data/#yearMonth"/>
+         <span property="facet" resource="../../../#yearMonth"/>
          <span property="start"><xsl:value-of select="@yearMonth"/></span>
          <span property="length" content="PT1M"/>
       </span>    
       in region [
       <span property="range" typeof="FacetPartition">
-         <span property="facet" resource="/data/#latitude"/>
-         <span property="facet" resource="/data/#longitude"/>
+         <span property="facet" resource="../../../#latitude"/>
+         <span property="facet" resource="../../../#longitude"/>
          <span property="shape" typeof="schema:GeoShape">
             <span property="schema:box">
                <xsl:value-of select="$lat"/>
@@ -61,9 +61,9 @@
       ]
       scale <span property="scale"><xsl:value-of select="$resolution"/></span>
    </h2>
-   <h3><a rel="previous" href="/data/{$previous}/{$requestSize}/{$requestSeq}" typeof="Partition">
+   <h3><a rel="previous" href="../../{$previous}/{$requestSize}/{$requestSeq}" typeof="Partition">
       <span property="range" typeof="FacetPartition">
-         <span property="facet" resource="/data/#yearMonth"/>
+         <span property="facet" resource="../../../#yearMonth"/>
          <span property="start"><xsl:value-of select="$previous"/></span>
          <span property="length" content="PT1M"/>
       </span>         
@@ -87,9 +87,9 @@
             </tr>
          </table>
       </div>
-      <a rel="next" href="/data/{$next}/{$requestSize}/{$requestSeq}" typeof="Partition">
+      <a rel="next" href="../../{$next}/{$requestSize}/{$requestSeq}" typeof="Partition">
          <span property="range" typeof="FacetPartition">
-            <span property="facet" resource="/data/#yearMonth"/>
+            <span property="facet" resource="../../../#yearMonth"/>
             <span property="start"><xsl:value-of select="$next"/></span>
             <span property="length" content="PT1M"/>
          </span>         
@@ -98,7 +98,7 @@
 </xsl:template>
    
 <xsl:template match="data:data">
-   <div typeof="Partition" resource="/data/{@yearMonth}/{$requestSize}/{$requestSeq}">
+   <div typeof="Partition" resource="">
       <xsl:call-template name="partitionHeader">
          <xsl:with-param name="count" select="count(data:table/data:tr/data:td[node()])"/>
       </xsl:call-template>

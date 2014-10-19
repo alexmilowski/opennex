@@ -14,7 +14,7 @@
 <xsl:param name="p4"/>
    
 <xsl:template name="merge">
-   <div typeof="Partition" resource="/data/{@yearMonth}/{$requestSize}/{$requestSeq}">
+   <div typeof="Partition" resource="">
       <xsl:call-template name="partitionHeader">
          <xsl:with-param name="count" select="count(collection()/data:data/data:table/data:tr/data:td[node()])"/>
       </xsl:call-template>
