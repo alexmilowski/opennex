@@ -1,4 +1,6 @@
-var mapExplorer = new MapExplorer(window.location.protocol+"//"+window.location.host+"/data/avg-rcp85/",60);
+var server = window.location.href.substring(0,window.location.href.lastIndexOf('/'));
+server = server.substring(0,server.lastIndexOf('/'));
+var mapExplorer = new MapExplorer(server+"/data/avg-rcp85/",60);
 
 window.addEventListener("load",function() {
 
@@ -74,6 +76,11 @@ MapExplorer.prototype.init = function(mapElement,months,onfinish) {
          this.fetch(months[i],onfinish);
       }
    }
+   this.map.on("click",function(e) {
+      setTimeout(function() {
+         app.showDetail(e.latlng.lat,e.latlng.lng);
+      },1);
+   });
 }
 
 MapExplorer.prototype.fetch = function(month,onfinish) {
@@ -172,4 +179,8 @@ MapExplorer.prototype.showMonth = function(month,fetch) {
       });
    }
    
+}
+
+MapExplorer.prototype.showDetail = function(lat,lon) {
+   console.log(lat+","+lon);
 }

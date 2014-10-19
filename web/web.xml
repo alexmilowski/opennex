@@ -10,7 +10,7 @@
    <!--<include href="../thirdparty/xproclet/modules/mod-xproc/mod-xproc.xml"/> -->
    <include href="file:///Users/alex/workspace/github/xproclet/mod-xproc/dist/mod-xproc/mod-xproc.xml"/>
    
-   <application name="s3">
+   <application name="opennex">
       <content match="/" href="https://s3.amazonaws.com/milowski-opennex/">
          <parameter name="method" value="GET"/>
          <parameter name="method" value="HEAD"/>
