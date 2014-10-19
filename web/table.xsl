@@ -116,7 +116,7 @@
 </xsl:template>
    
 <xsl:template match="data:table">
-   <table typeof="IndexedTable">
+   <table property="item" typeof="IndexedTable">
       <xsl:call-template name="columnHeaders"/>
       <xsl:apply-templates/>
    </table>

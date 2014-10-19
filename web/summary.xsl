@@ -3,7 +3,7 @@
    xmlns:xs="http://www.w3.org/2001/XMLSchema"
    xmlns:data="http://milowski.com/opennex/"
    xmlns="http://www.w3.org/1999/xhtml"
-   exclude-result-prefixes="xs"
+   exclude-result-prefixes="xs data"
    version="2.0">
    
    
@@ -32,6 +32,7 @@
             </span>
          </span>
          ]
+         scale <span property="scale"><xsl:value-of select="$size div 120.0"/></span>
       </h2>
       <h3><a rel="previous" href="/data/{$previous}/{$size}/" typeof="PartitionSummary">
             <span property="range" typeof="FacetPartition">
@@ -55,7 +56,7 @@
    
 <xsl:template match="data:table">
    <xsl:variable name="quadSize" select="$size div 120"/>
-   <table typeof="IndexedTable">
+   <table property="item" typeof="IndexedTable">
       <caption>
          <span property="entry" typeof="Entry">
             <span property="description">Temperature</span>

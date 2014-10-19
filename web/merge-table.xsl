@@ -18,7 +18,7 @@
       <xsl:call-template name="partitionHeader">
          <xsl:with-param name="count" select="count(collection()/data:data/data:table/data:tr/data:td[node()])"/>
       </xsl:call-template>
-      <table typeof="IndexedTable">
+      <table property="item" typeof="IndexedTable">
          <xsl:call-template name="columnHeaders"/>
          <xsl:for-each select="collection()/data:data[@sequence eq $p1]/data:table/data:tr">
             <xsl:variable name="row" select="position()"/>

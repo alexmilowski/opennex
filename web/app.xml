@@ -22,6 +22,7 @@
          <attribute name="xproc.cache" ref="xproc.cache"/>
          <content match="/docs" href="docs"/>
          <content match="/raw" href="riap://component/s3/"/>
+         <content match="/explore/" href="explore"/>
          <filter match="" class="org.xproclet.server.CORSFilter">
             <next>
                <filter match="" class="org.xproclet.server.EncodingFilter">
