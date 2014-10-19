@@ -43,7 +43,7 @@ function display(xhtml) {
    
    console.log(box+" at "+scale)
    
-   L.rectangle([ [box[0],box[1]], [box[6],box[7]] ], {color: "rgb(0,0,0)", weight: 0}).addTo(map);
+   //L.rectangle([ [box[0],box[1]], [box[6],box[7]] ], {color: "rgb(0,0,0)", weight: 0}).addTo(map);
    
    
    var items = xhtml.data.getValues(summary.data.id,"pan:item");
