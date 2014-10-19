@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component xmlns="http://www.xproclet.org/V/Server/" xmlns:xproc="http://www.xproclet.org/V/XProc/">
+   
+   <client protocol="CLAP"/>
+   <client protocol="RIAP"/>
+   <client protocol="FILE"/>
+   <client protocol="HTTP"/>
+   <client protocol="HTTPS"/>
+
+   <!--<include href="../thirdparty/xproclet/modules/mod-xproc/mod-xproc.xml"/> -->
+   <include href="file:///Users/alex/workspace/github/xproclet/mod-xproc/dist/mod-xproc/mod-xproc.xml"/>
+   
+   <application name="s3">
+      <content match="/" href="https://s3.amazonaws.com/milowski-opennex/avg-rcp85/">
+         <parameter name="method" value="GET"/>
+         <parameter name="method" value="HEAD"/>
+      </content>
+   </application>
+   
+   <server protocol="HTTP" address="*" port="8080">
+      <host name="localhost">
+         <attribute name="xproc.cache" ref="xproc.cache"/>
+         <content match="/raw" href="riap://component/s3/"/>
+         <filter match="" class="org.xproclet.server.EncodingFilter">
+            <parameter name="types" value="application/xhtml+xml,application/json,application/ld+json"/>
+            <next>
+               <router>
+                  <route match="/data/{monthday}/{size}/" mode="equals" ref="xproclet">
+                     <attribute name="xproc.configuration">
+                        <xproc:method name="GET" href="summary.xpl" output-type="application/xhtml+xml">
+                           <xproc:option name="base" value="riap://component/s3/"/>
+                           <xproc:option name="monthday" source="attributes"/>
+                           <xproc:option name="size" source="attributes"/>
+                        </xproc:method>
+                     </attribute>
+                  </route>
+                  <route match="/data/{monthday}/{size}/{partition}" mode="equals" ref="xproclet">
+                     <attribute name="xproc.configuration">
+                        <xproc:method name="GET" href="partition.xpl" output-type="application/xhtml+xml">
+                           <xproc:option name="base" value="riap://component/s3/"/>
+                           <xproc:option name="monthday" source="attributes"/>
+                           <xproc:option name="size" source="attributes"/>
+                           <xproc:option name="partition" source="attributes"/>
+                        </xproc:method>
+                     </attribute>
+                  </route>
+               </router>
+            </next>
+         </filter>
+      </host>
+   </server>
+</component>
+      
+   
