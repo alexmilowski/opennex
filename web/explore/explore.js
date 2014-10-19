@@ -1,31 +1,57 @@
+var mapExplorer = new MapExplorer(window.location.protocol+"//"+window.location.host,60);
+
 window.addEventListener("load",function() {
-   window.map = L.map('map').setView([37, -95], 5);
+
+   mapExplorer.init(document.getElementById("map"),["2006-01"]);
+   
+},false)
+
+function MapExplorer(server,resolution) {
+   this.server = server;
+   this.layers = {};
+   this.resolution = typeof resolution == "undefined" ? 60 : resolution
+}
+
+MapExplorer.prototype.init = function(mapElement,months) {
+   this.map = L.map('map').setView([37, -95], 5);
    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
        attribution: '© <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-   }).addTo(map);
-   
+   }).addTo(this.map);
+   for (var i=0; i<months.length; i++) {
+      this.fetch(months[i]);
+   }
+}
+
+MapExplorer.prototype.fetch = function(month) {
+   var app = this;
    try {
       
+      var startTime = new Date();
       var request = new XMLHttpRequest();
       request.onreadystatechange = function() {
          if (request.readyState==4) {
+            fetchTime = new Date();
             setTimeout(function() {
-               display(request.responseXML)
+               app.display(month,request.responseXML, { start: startTime, fetchEnd: fetchTime })
             },1);
          }
       }
-      request.open("GET","/data/2006-01/60/",true);
+      var url = this.server+"/data/"+month+"/"+this.resolution+"/";
+      request.open("GET",url,true);
+      console.log("Fetching "+url);
       request.send();
    } catch(ex) {
       console.log(ex);
    }
-},false)
+   
+}
 
-function display(xhtml) {
+MapExplorer.prototype.display = function(month,xhtml,properties) {
+   console.log("Displaying "+month);
    window.xhtml = xhtml
    GreenTurtle.attach(xhtml);
    
-   var latFacet = window.location.protocol+"//"+window.location.host+"/data/#latitude";
+   var latFacet = this.server+"/data/#latitude";
    
    xhtml.data.setMapping("pan","http://pantabular.org/");
    var summary = xhtml.getElementsByType("pan:PartitionSummary")[0];
@@ -41,10 +67,8 @@ function display(xhtml) {
    
    var scale = parseFloat(xhtml.data.getValues(summary.data.id,"pan:scale")[0]);
    
-   console.log(box+" at "+scale)
-   
-   //L.rectangle([ [box[0],box[1]], [box[6],box[7]] ], {color: "rgb(0,0,0)", weight: 0}).addTo(map);
-   
+   var layerGroup = L.layerGroup();
+   layerGroup.addTo(this.map);
    
    var items = xhtml.data.getValues(summary.data.id,"pan:item");
    var table = xhtml.getElementsBySubject(items[0])[0];
@@ -58,8 +82,19 @@ function display(xhtml) {
             var color = HeatMap.color(-10,30,c)
             var lat = box[0] - (row-1)*scale;
             var lon = box[1] + (col-1)*scale;
-            L.rectangle([[lat,lon],[lat-scale,lon+scale]], {fill: true, color: "rgb("+color[0]+","+color[1]+","+color[2]+")", weight: 0}).addTo(map);
+            var rect = L.rectangle([[lat,lon],[lat-scale,lon+scale]], {fill: true, color: "rgb("+color[0]+","+color[1]+","+color[2]+")", weight: 0});
+            layerGroup.addLayer(rect);
          }
       }
    }
+   info = {
+      end: new Date(),
+      layer: layerGroup
+   };
+   for (k in properties) {
+      info[k] = properties[k];
+   }
+   this.layers[month] = info;
+   console.log("Fetch: "+(info.fetchEnd.getTime() - info.start.getTime()));
+   console.log("Elapsed: "+(info.end.getTime() - info.start.getTime()));
 }
