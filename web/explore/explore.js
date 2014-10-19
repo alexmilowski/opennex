@@ -1,4 +1,4 @@
-var mapExplorer = new MapExplorer(window.location.protocol+"//"+window.location.host,60);
+var mapExplorer = new MapExplorer(window.location.protocol+"//"+window.location.host+"/data/avg-rcp85/",60);
 
 window.addEventListener("load",function() {
 
@@ -93,7 +93,7 @@ MapExplorer.prototype.fetch = function(month,onfinish) {
             },1);
          }
       }
-      var url = this.server+"/data/"+month+"/"+this.resolution+"/";
+      var url = this.server+month+"/"+this.resolution+"/";
       request.open("GET",url,true);
       console.log("Fetching "+url);
       request.send();

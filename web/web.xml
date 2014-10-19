@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component xmlns="http://www.xproclet.org/V/Server/" xmlns:xproc="http://www.xproclet.org/V/XProc/">
+   
+   <client protocol="CLAP"/>
+   <client protocol="RIAP"/>
+   <client protocol="FILE"/>
+   <client protocol="HTTP"/>
+   <client protocol="HTTPS"/>
+
+   <!--<include href="../thirdparty/xproclet/modules/mod-xproc/mod-xproc.xml"/> -->
+   <include href="file:///Users/alex/workspace/github/xproclet/mod-xproc/dist/mod-xproc/mod-xproc.xml"/>
+   
+   <application name="s3">
+      <content match="/" href="https://s3.amazonaws.com/milowski-opennex/">
+         <parameter name="method" value="GET"/>
+         <parameter name="method" value="HEAD"/>
+      </content>
+   </application>
+   
+   <server protocol="HTTP" address="*" port="8080">
+      <host name="localhost">
+         <attribute name="xproc.cache" ref="xproc.cache"/>
+         <content match="/docs" href="docs"/>
+         <content match="/explore/" href="explore"/>
+         <include href="app.xml"/>
+      </host>
+   </server>
+</component>
+      
+   

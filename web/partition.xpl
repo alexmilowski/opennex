@@ -2,6 +2,7 @@
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc"
    xmlns:c="http://www.w3.org/ns/xproc-step" version="1.0" xmlns:h="http://www.w3.org/1999/xhtml">
    <p:option name="base"/>
+   <p:option name="dset"/>
    <p:option name="monthday"/>
    <p:option name="size"/>
    <p:option name="partition"/>
@@ -14,7 +15,7 @@
             <p:variable name="col" select="number($partition) - number($row) * 1440"/>
             <p:variable name="rseq" select="(number($row) idiv 2) * 720 + ceiling(number($col) div 2)"/>
             <p:load>
-               <p:with-option name="href" select="concat($base,$monthday,'/60/',$rseq,'.xml')"/>
+               <p:with-option name="href" select="concat($base,$dset,'/',$monthday,'/60/',$rseq,'.xml')"/>
             </p:load>
             <p:xslt>
                <p:with-param name="partitionRow" select="$row"/>
@@ -28,7 +29,7 @@
          </p:when>
          <p:when test="$size = 60">
             <p:load>
-               <p:with-option name="href" select="concat($base,$monthday,'/60/',$partition,'.xml')"/>
+               <p:with-option name="href" select="concat($base,$dset,'/',$monthday,'/60/',$partition,'.xml')"/>
             </p:load>
             <p:xslt>
                <p:with-param name="requestSize" select="$size"/>
@@ -46,16 +47,16 @@
             <p:variable name="p3" select="number($row)*2 * 720 + number($col)*2 - 1"/>
             <p:variable name="p4" select="number($row)*2 * 720 + number($col)*2"/>
             <p:load name="p1">
-               <p:with-option name="href" select="concat($base,$monthday,'/60/',$p1,'.xml')"/>
+               <p:with-option name="href" select="concat($base,$dset,'/',$monthday,'/60/',$p1,'.xml')"/>
             </p:load>
             <p:load name="p2">
-               <p:with-option name="href" select="concat($base,$monthday,'/60/',$p2,'.xml')"/>
+               <p:with-option name="href" select="concat($base,$dset,'/',$monthday,'/60/',$p2,'.xml')"/>
             </p:load>
             <p:load name="p3">
-               <p:with-option name="href" select="concat($base,$monthday,'/60/',$p3,'.xml')"/>
+               <p:with-option name="href" select="concat($base,$dset,'/',$monthday,'/60/',$p3,'.xml')"/>
             </p:load>
             <p:load name="p4">
-               <p:with-option name="href" select="concat($base,$monthday,'/60/',$p4,'.xml')"/>
+               <p:with-option name="href" select="concat($base,$dset,'/',$monthday,'/60/',$p4,'.xml')"/>
             </p:load>
             <p:xslt template-name="merge">
                <p:with-param name="p1" select="$p1"/>
