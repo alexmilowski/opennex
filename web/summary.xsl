@@ -79,7 +79,7 @@
    
 <xsl:template match="data:tr">
    <tr>
-      <th property="index" typeof="RowIndex"><span property="value"><xsl:value-of select="50 + count(preceding-sibling::data:tr) * $size div 120"/></span>°</th>
+      <th property="index" typeof="RowIndex"><span property="value"><xsl:value-of select="50 - count(preceding-sibling::data:tr) * $size div 120"/></span>°</th>
       <xsl:apply-templates></xsl:apply-templates>
    </tr>
 </xsl:template>

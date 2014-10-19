@@ -17,8 +17,10 @@
                <p:with-option name="href" select="concat($base,$monthday,'/60/',$rseq,'.xml')"/>
             </p:load>
             <p:xslt>
-               <p:with-param name="row" select="$row"/>
-               <p:with-param name="col" select="$col"/>
+               <p:with-param name="partitionRow" select="$row"/>
+               <p:with-param name="partitionCol" select="$col"/>
+               <p:with-param name="requestSize" select="$size"/>
+               <p:with-param name="requestSeq" select="$partition"/>
                <p:input port="stylesheet">
                   <p:document href="half-table.xsl"/>
                </p:input>
@@ -29,9 +31,8 @@
                <p:with-option name="href" select="concat($base,$monthday,'/60/',$partition,'.xml')"/>
             </p:load>
             <p:xslt>
-               <p:input port="parameters">
-                  <p:empty/>
-               </p:input>
+               <p:with-param name="requestSize" select="$size"/>
+               <p:with-param name="requestSeq" select="$partition"/>
                <p:input port="stylesheet">
                   <p:document href="table.xsl"/>
                </p:input>
@@ -61,6 +62,8 @@
                <p:with-param name="p2" select="$p2"/>
                <p:with-param name="p3" select="$p3"/>
                <p:with-param name="p4" select="$p4"/>
+               <p:with-param name="requestSize" select="$size"/>
+               <p:with-param name="requestSeq" select="$partition"/>
                <p:input port="source">
                   <p:pipe port="result" step="p1"/>
                   <p:pipe port="result" step="p2"/>
