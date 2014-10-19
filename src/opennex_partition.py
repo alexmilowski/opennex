@@ -58,7 +58,7 @@ def partition(outDir,year,month,mset,partitionSize):
    path = path + "/" + str(partitionSize)
    if not os.path.exists(path):
       os.makedirs(path)
-   
+      
    for i in range(0,d.shape[0]):
       sys.stderr.write("  {0}".format(i));
       for j in range(0,d.shape[1]):
@@ -97,7 +97,7 @@ def partition(outDir,year,month,mset,partitionSize):
                   exit(1)
                
          #reduction = reduce(lambda r,x: (r[0]+1,r[1]+x) if x<1.00000002e20 and x>0 else r, partition.flat,(0,0))
-         #d[i,j] = 0 if reduction[0] == 0 else reduction[1] / reduction[0]
+         #print "",reduction,0 if reduction[0] == 0 else reduction[1] / reduction[0]
          
          filename = path+"/"+str(seq)+".xml"
          #sys.stderr.write(" ... writing {0} ...\n".format(filename))
@@ -234,8 +234,8 @@ def main():
    
    for m in requested:
 
-      year = startYear+(m+1)/12
-      month = (m+1)%12      
+      year = startYear+m/12
+      month = m % 12 + 1    
       sys.stderr.write("{0}-{1:02d} :\n".format(year,month))
    
       t1 = time.time()

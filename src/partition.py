@@ -104,8 +104,8 @@ for line in sys.stdin:
    
    for m in requested:
 
-      year = startYear+(m+1)/12
-      month = (m+1)%12      
+      year = startYear+m/12
+      month = m % 12 + 1    
    
       sys.stderr.write("{0} {1}-{2:02d} :\n".format(m,year,month))
       mset = tasmax[m,:,:]
