@@ -22,9 +22,3 @@ s3://nasanex/NEX-DCP30/NEX-quartile/rcp85/mon/atmos/tasmax/r1i1p1/v1.0/CONUS/tas
 s3://nasanex/NEX-DCP30/NEX-quartile/rcp85/mon/atmos/tasmax/r1i1p1/v1.0/CONUS/tasmax_ens-avg_amon_rcp85_CONUS_209601-209912.nc 43 44
 s3://nasanex/NEX-DCP30/NEX-quartile/rcp85/mon/atmos/tasmax/r1i1p1/v1.0/CONUS/tasmax_ens-avg_amon_rcp85_CONUS_209601-209912.nc 45 46
 s3://nasanex/NEX-DCP30/NEX-quartile/rcp85/mon/atmos/tasmax/r1i1p1/v1.0/CONUS/tasmax_ens-avg_amon_rcp85_CONUS_209601-209912.nc 47 48
-s3://nasanex/NEX-DCP30/NEX-quartile/rcp85/mon/atmos/tasmax/r1i1p1/v1.0/CONUS/tasmax_ens-avg_amon_rcp85_CONUS_209601-209912.nc 49 50
-s3://nasanex/NEX-DCP30/NEX-quartile/rcp85/mon/atmos/tasmax/r1i1p1/v1.0/CONUS/tasmax_ens-avg_amon_rcp85_CONUS_209601-209912.nc 51 52
-s3://nasanex/NEX-DCP30/NEX-quartile/rcp85/mon/atmos/tasmax/r1i1p1/v1.0/CONUS/tasmax_ens-avg_amon_rcp85_CONUS_209601-209912.nc 53 54
-s3://nasanex/NEX-DCP30/NEX-quartile/rcp85/mon/atmos/tasmax/r1i1p1/v1.0/CONUS/tasmax_ens-avg_amon_rcp85_CONUS_209601-209912.nc 55 56
-s3://nasanex/NEX-DCP30/NEX-quartile/rcp85/mon/atmos/tasmax/r1i1p1/v1.0/CONUS/tasmax_ens-avg_amon_rcp85_CONUS_209601-209912.nc 57 58
-s3://nasanex/NEX-DCP30/NEX-quartile/rcp85/mon/atmos/tasmax/r1i1p1/v1.0/CONUS/tasmax_ens-avg_amon_rcp85_CONUS_209601-209912.nc 59 60
