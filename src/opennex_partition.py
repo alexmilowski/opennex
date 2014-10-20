@@ -72,9 +72,6 @@ def partition(outDir,year,month,mset,partitionSize):
          
          for row in range(0,partition.shape[0]):
             for col in range(0,partition.shape[1]):
-               #plat = region[0] - resolution*row
-               #plon = region[1] + resolution*col
-               #seq = sequenceNumber(plat,plon,gridSize,gridSize)
                cellSeq = pseq + row*seqRow + col
 
                # note: we use interger division so the fractions are dropped
@@ -86,7 +83,8 @@ def partition(outDir,year,month,mset,partitionSize):
                # either the sequence number is outside of the possible range or it is inside the range but not within the region's column subset
                #print cellSeq,dataRegionSeq,adjSeq
                try:
-                  partition[row][col] = mset[laty,lonx] if cellSeq >= dataRegionSeq[0] and cellSeq <= dataRegionSeq[3] and adjSeq >= dataRegionSeq[0] and adjSeq <= dataRegionSeq[1] else 0.0
+                  # Note: the laty index assumes top-down but the data is organized in reverse so we have to adjust the index
+                  partition[row][col] = mset[mset.shape[0]-laty-1,lonx] if cellSeq >= dataRegionSeq[0] and cellSeq <= dataRegionSeq[3] and adjSeq >= dataRegionSeq[0] and adjSeq <= dataRegionSeq[1] else 0.0
                   if partition[row][col]>=1.00000002e20:
                      partition[row][col] = 0
                except:
@@ -120,6 +118,7 @@ def partition(outDir,year,month,mset,partitionSize):
    
 
 #TODO: partition and summarize run the same algorithm and it should be refactored
+#TODO: the summary is produced in reverse because the input is organized by lowest latitude first.  Should this be fixed?
 def summarize(mset,partitionSize):
 
    resolution = partitionSize/120.0
