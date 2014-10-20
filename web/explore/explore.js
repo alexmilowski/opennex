@@ -68,11 +68,12 @@ window.addEventListener("load",function() {
       var box = document.createElement("div");
       var prefix = t==MapExplorer.cmin ? "< " : "";
       var suffix = t==MapExplorer.cmax ? " >" : "";
-      box.appendChild(document.createTextNode(prefix+t.toString()+suffix));
+      span = document.createElement("span")
+      box.appendChild(span);
+      span.appendChild(document.createTextNode(prefix+t.toString()+suffix));
       colorLegend.appendChild(box);
       var color = HeatMap.color(MapExplorer.cmin,MapExplorer.cmax,MapExplorer.adjustTemperature(t))
       box.style.backgroundColor = "rgb("+color[0]+","+color[1]+","+color[2]+")";
-      box.style.opacity = 0.5;
 
    }
    

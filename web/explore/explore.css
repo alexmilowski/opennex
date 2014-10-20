@@ -34,6 +34,12 @@ h1,h2,h3,h4,h5 {
    width: 6%;
    padding-top: 0.25em;
    padding-bottom: 0.25em;
+   opacity: 0.5;
+}
+
+#color-legend > div > span {
+   opacity: 1;
+   z-index: 11;
    font-weight: bold;
 }
 
@@ -88,5 +94,14 @@ h1,h2,h3,h4,h5 {
    font-size: 1.5em;
    width: 90%;
 }
+
+#color-legend {
+   font-size: 2em;
+}
+
+#color-legend > div:first-of-type, #color-legend > div:last-of-type {
+   width: 8%;
+}
+
 
 }
