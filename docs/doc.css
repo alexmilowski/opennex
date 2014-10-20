@@ -1,0 +1,270 @@
+@namespace math url("http://www.w3.org/1998/Math/MathML");
+
+body {
+   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+   /*font-family: "Times New Roman", Times, serif;*/
+   /*font-family: Garamond, serif;*/
+   font-size: 12pt;
+   line-height: 1.825;
+}
+h1, h2, h3, h4, h5, figcaption, caption {
+   font-family: Helvetica, Arial, sans-serif;
+}
+
+pre, code {
+   /*font-family: "Lucida Console", Monaco, monospace;*/
+}
+
+pre {
+   line-height: 1.2;
+}
+
+.varname {
+   font-style: italic;
+}
+
+article[typeof=Chapter] {
+   page-break-before: always;
+}
+
+main, article, section, p {
+   margin-right: 0em;
+}
+
+article p {
+   text-align: justify;
+}
+
+article[typeof=Chapter] hgroup {
+   margin-top: 15em;
+   text-align: center;
+}
+
+article[typeof=Chapter] h1 {
+   font-size: 22pt;
+}
+
+article[typeof=Chapter] h2 {
+   margin-top: 3em;
+   font-size: 18pt;
+}
+
+section[typeof=Appendix] {
+   page-break-before: always;
+}
+
+section[typeof=Appendix] hgroup {
+   margin-top: 10em;
+   text-align: center;
+}
+
+
+abbr {
+   font-weight: bold;
+}
+
+abbr.large {
+   font-size: 1.25em;
+}
+
+
+article[typeof=Chapter] h3, .chapter h4, .chapter h5 {
+   font-size: 12pt;
+}
+
+article[typeof=Chapter] li p {
+   text-indent: 0pt;
+}
+
+p.todo {
+   color: red;
+}
+
+p.todo * {
+   color: red;
+}
+
+article[typeof=Chapter] header > aside {
+   font-style: italic;
+   margin-left: 2em;
+   margin-right: 2em;
+   margin-top: 3em;
+   margin-bottom: 5em;
+   border-bottom: 1px solid black;
+}
+
+article[typeof=Chapter] header > aside h2 {
+   font-weight: normal;
+}
+
+
+
+a {
+   text-decoration: none;
+   color: black;
+}
+
+a[rel=xref] {
+   font-style: italic;
+}
+
+em.drop {
+   display: inline-block;
+   font-size: 1.5em; 
+   vertical-align: top;
+   line-height: 1.5em;
+   font-style: normal;
+   font-family: Georgia;
+}
+
+*[typeof=Declaration] .signer {
+   text-align: right;
+}
+
+section > img {
+   display: block;
+   margin-top: 1em;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+figure {
+    text-align: center;
+}
+
+figure figcaption {
+   font-weight: bold;
+   margin-bottom: 1em;
+}
+
+figure .caption {
+   margin-left: 1em;
+   margin-right: 1em;
+   font-style: italic;
+}
+
+figure pre {
+   text-align: left;
+   font-size: 8pt;
+}
+
+figure pre.squeezed {
+   letter-spacing:-0.1em;
+}
+
+article[typeof=Chapter] table {
+   margin-left: auto;
+   margin-right: auto;
+   border-right: 1px solid black; 
+   border-bottom: 1px solid black; 
+   border-spacing: 0px;
+}
+
+article[typeof=Chapter] table p {
+   text-indent: 0em;
+}
+
+article[typeof=Chapter] table td {
+   border-left: 1px solid black; 
+   border-top: 1px solid black; 
+   padding: 0.2em;
+}
+
+article[typeof=Chapter] table th {
+   padding: 0.2em;
+   border-left: 1px solid black; 
+   border-top: 1px solid black; 
+   text-align: center;
+}
+
+article[typeof=Chapter] table caption {
+   font-weight: bold;
+}
+
+*[typeof=CitedWork] {
+   font-size: 10pt;
+   margin-bottom: 0.5em;
+}
+.biblio-number:before {
+   content: "[";
+}
+
+.biblio-number {
+   display: inline-block;
+   margin-right: 1em;
+}
+
+.biblio-number:after {
+   content: "]";
+}
+
+.error {
+   color: red;
+}
+
+
+math|math {
+   font-family: "STIX";
+}
+
+*[typeof=Statement] {
+   margin-left: 1.5em;
+   font-style: italic;
+}
+
+*[typeof=Statement] p:first-child {
+   text-indent: 0pt;
+}
+
+blockquote p {
+   text-indent: 0pt;   
+   font-style: italic;
+}
+
+.note {
+   margin-top: 1em;
+   margin-left: 3em;
+   margin-right: 3em;
+}
+
+.note h1 {
+   font-size: 1.1em;
+   margin-top: 0em;
+   margin-bottom: 1em;
+}
+
+table {
+   margin-top: 1em;
+   margin-bottom: 1em;
+}
+
+td > p {
+   margin-top: 0em;
+   margin-bottom: 0.125em;
+   font-size: 0.875em;
+}
+
+.equation {
+   text-align: center;
+}
+
+.epigraph {
+   margin-top: 4em;
+   margin-bottom: 2em;
+}
+
+.epigraph .content > *:first-child:before {
+   display: inline;
+   content: "“";
+   font-size: 1.2em;
+}
+
+.epigraph .content > *:last-child:after {
+   display: inline;
+   content: "”";
+   font-size: 1.2em;
+}
+
+.footnote {
+   float: footnote;
+}

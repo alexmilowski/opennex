@@ -1,0 +1,23 @@
+.blank-page {
+   page-break-before: always;
+}
+
+figure {
+   page-break-inside: avoid;
+   float: top unless-fit;
+   /*float: prince-snap;*/
+   /*float: snap(0);*/
+}
+
+table {
+   page-break-inside: avoid;
+   float: top unless-fit;
+}
+
+ul, ol {
+   /*page-break-inside: avoid;*/
+}
+
+#R-biblio {
+  page-break-before: always;
+}

@@ -1,0 +1,40 @@
+body {
+   font-size: 10pt;
+}
+
+address[typeof=Author] {
+   margin-bottom: 1em;
+}
+
+@page {
+   size: A4;
+}
+
+@page {
+   margin-left: 2cm;
+   margin-right: 2cm;
+   margin-top: 2cm;
+   margin-bottom: 2cm;
+   @bottom-center {
+      vertical-align: top;
+      content: counter(page);
+   }
+}
+
+h1 {
+   font-size: 1.5em;
+}
+
+h2,h3,h4,h5,h6 {
+   font-size: 1.2em;
+}
+
+p {
+   margin-bottom: 0.3em;
+   margin-top: 0em;
+}
+
+header {
+   border-bottom: 1pt solid black;
+   padding-bottom: 1em;
+}

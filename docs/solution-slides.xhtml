@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>OpenNEX on the Web</title>
+      <meta name="copyright" content="Copyright &#169; 2014 R. Alexander Miłowski, Henry S. Thompson"/>
+      <meta name="holder" content="R. Alexander Miłowski"/>
+      <meta name="holder" content="Henry S. Thompson"/>
+      <meta name="creator" content="R. Alexander Miłowski"/>
+      <meta name="pubdate" content="2014-10-19"/>
+      <link rel="stylesheet" type="text/css" href="slidy/slidy.css"/>
+      <link rel="stylesheet" type="text/css" href="slidy/theme.css" />
+      <script type="text/javascript" src="slidy/slidy.js"/>
+      <script type="text/javascript">w3c_slidy.mouse_click_enabled = false;</script>
+   </head>
+   <body>
+      <div class="background">
+         <!--
+         <header><div class="logo-ischool" ><img src="slidy/ischool-logo.png"/></div><div class="logo-ilcc" ><img src="slidy/crest.gif"/></div></header>
+         -->
+         <footer><img class="ilcc" src="slidy/ilcc-desc.png"/><img class="ischool" src="slidy/ischool-logo.jpg" title="School of Information, Univesity of California, Berkeley"/></footer>
+      </div>
+      <div class="slide cover title">
+         <hgroup>
+            <h1>OpenNEX on the Web</h1>
+            <h2>October 21, 2014</h2>
+         </hgroup>
+         <div class="author">
+            <p><a href="http://www.milowski.com/" rel="name">R. Alexander Miłowski</a></p>
+            <p><a href="mailto:milowski@ischool.berkeley.edu" rel="email">milowski@ischool.berkeley.edu</a></p>
+            <p><img src="slidy/ischool-logo.jpg" title="School of Information, Univesity of California, Berkeley"/></p>
+         </div>
+         <div class="author">
+            <p><a href="http://www.ltg.ed.ac.uk/~ht/" rel="name">Henry S. Thompson</a></p>
+            <p><a href="mailto:ht@inf.ed.ac.uk" rel="email">ht@inf.ed.ac.uk</a></p>
+            <p><img src="slidy/ilcc-desc.png" title="Institute for Language, Cognition and Computation"/></p>
+         </div>
+      </div>
+      <div class="slide">
+         <h1>Problem Description</h1>
+         <div class="two-column">
+            <ul>
+               <li>Often, data formats used by professional science</li>
+               <li>are difficult to process</li>
+               <li>and inaccessible on the Web</li>
+               <li>while possibly justified</li>
+               <li>they leave out other government</li>
+               <li>and business agencies</li>
+               <li>as well as citizen scientists.</li>
+            </ul>
+            <ul>
+               <li>We need to enable</li>
+               <li>access to data sets</li>
+               <li>from within the technologies</li>
+               <li>of the Open Web Platform</li>
+               <li>so that everyone</li>
+               <li>has access to scientific data.</li>
+            </ul>
+         </div>
+      </div>
+      <div class="slide">
+         <h1>Summary of Solution</h1>
+         <div class="two-column">
+            <ul style="margin-top: 2em">
+               <li>The OpenNEX NEX-DCP30 data has been transformed</li>
+               <li>into Web accessible data</li>
+               <li>using RDFa as a <q>semantic web</q> encoding</li>
+               <li>partitioned into quadrangles</li>
+               <li>so that it is sized appropriately</li>
+               <li>for use within Web</li>
+               <li>by client-side browser applications.</li>
+            </ul>
+            <div>
+               <h2><p>View a <a href="http://data.pantabular.org/opennex/explore/" target="new">demo online</a>!</p></h2>
+               <img src="quadrangles.svg" style="width: 100%"/>
+            </div>
+         </div>
+      </div>
+      <div class="slide">
+         <h1>Use of Datasets</h1>
+         <ul>
+            <li><p>The OpenNEX NEX-DCP30 climate data is produced at resolution 1/120°:</p>
+               <ul>
+                  <li>each partition (5 years) is about 1.3GB</li>
+                  <li>each month is a smaller slice</li>
+                  <li>that can be made smaller by handling non-data (e.g., fill values)</li>
+               </ul>
+            </li>
+            <li>Lower resolution summaries (e.g. 1/2°) can provide quick visualizations requiring less space.</li>
+            <li>Data needs to be provided for quick access by Web-based application.</li>
+            <li><p>Use of CORS enables access:</p>
+               <ul>
+                  <li><a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">Cross-orign resource sharing (CORS)</a></li>
+                  <li>enables data services</li>
+                  <li>to be accessed by any website.</li>
+               </ul>
+            </li>
+            <li>RDFa annotations provide scientific contexts (e.g. quantities, domains, locations, etc.)</li>
+         </ul>
+      </div>
+      <div class="slide">
+         <h1>Solution Details</h1>
+         <div class="two-column">
+            <ul style="margin-top: 2em">
+               <li>Data is extracted from the OpenNEX datasets</li>
+               <li>by utilizing map reduce on AWS EMR (Hadoop) </li>
+               <li>to reorganize, summarize, and store</li>
+               <li>data into AWS S3</li>
+               <li>exposed by web services</li>
+               <li>hosted on AWS EC2 instances</li>
+               <li>served up to various browser applications</li>
+               <li>encoded via RDFa</li>
+               <li>accessed via CORS requests</li>
+               <li>and render by browser applications.</li>
+            </ul>
+            <img src="aws-solution.svg"/>
+         </div>
+      </div>
+   </body>
+</html>

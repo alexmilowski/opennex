@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    version="5.0">
+    <title>OpenNEX on the Web</title>
+    <section>
+       <title>Overview</title>
+       <para>The Open Web Platform (OWP) <citation>owp</citation> is a platform of shared behaviors,
+         expected by publishers and authors, and a nexus for innovation, consolidation, and cost
+         efficiencies focused on those things that happen within the actions of the Web browser. Our
+         solution exposes the OpenNEX data so that interested parties (e.g., citizen scientists) are
+         capable of utilizing the OWP to communicate their interpretations through interactive
+         visualizations or computations; helping bridge the gaps between professional scientists and
+         the public at large.</para>
+       <para>Our solution involes transforming the OpenNEX NEX-DCP30 <emphasis role="italic"
+               ><citation>nex-dcp30</citation></emphasis> climate projections into Web sized data
+         resources native to the Web.  Utilizing the AWS infratructure, it transforms and hosts the
+         data in various ways to enable the browser to be a platform for interacting with the
+         climate data.</para>
+      <para>We demonstrate the result by showing browser-based applications (see
+            <code>http://data.pantabular.org/opennex/explore/</code>).  We use off-the-shelf
+         libraries commonly used within the Web community for map-based applications to show how our
+         system facilitates the use of climate data.</para>
+       <mediaobject>
+          <imageobject>
+             <imagedata fileref="aws-solution.svg" scale="75"/>
+          </imageobject>
+       </mediaobject>
+    </section>
+   <bibliography>
+      <title>Bibliography</title>
+      <bibliomixed xml:id="owp">
+         <citetitle>The future of applications: W3C TAG perspectives</citetitle>, 
+         <author><personname>Henry S. Thompson</personname></author>, 
+         <orgname>School of Informatics, University of Edinburgh</orgname>,
+         <pubdate>2011-03-28</pubdate>, 
+         <bibliomset role="conference">
+            <title>W3C Technical Architecture Group</title>
+         </bibliomset>
+         <bibliomisc><link xlink:href="http://www.w3.org/2001/tag/doc/IAB_Prague_2011_slides.html"/></bibliomisc>
+      </bibliomixed>
+      <bibliomixed xml:id="nex-dcp30">
+         <citetitle>New downscaled climate projections suitable for resource management in the U.S. Eos</citetitle>
+         <author><personname>Trasher, B.</personname></author>, <author><personname>Xiong, J.</personname></author>, <author><personname>Wang, W.</personname></author>, <author><personname>Melton, F.</personname></author>, <author><personname>Michaelis, A.</personname></author>, and <author><personname>R. Nemani</personname></author>, 
+         <pubdate>2013</pubdate>. ,
+         <bibliomset role="journal"><title>Transactions American Geophysical Union (in review).</title></bibliomset></bibliomixed>
+   </bibliography>
+</article>
