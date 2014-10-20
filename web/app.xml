@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<filter match="" class="org.xproclet.server.CORSFilter" xmlns="http://www.xproclet.org/V/Server/" xmlns:xproc="http://www.xproclet.org/V/XProc/">
+<filter match="/data" class="org.xproclet.server.CORSFilter" xmlns="http://www.xproclet.org/V/Server/" xmlns:xproc="http://www.xproclet.org/V/XProc/">
    <next>
       <filter match="" class="org.xproclet.server.EncodingFilter">
          <parameter name="types" value="application/xhtml+xml,application/json,application/ld+json"/>
          <next>
             <router>
-               <route match="/data/{dset}/{monthday}/{size}/" mode="equals" ref="xproclet">
+               <route match="/{dset}/{monthday}/{size}/" mode="equals" ref="xproclet">
                   <attribute name="xproc.configuration">
                      <xproc:method name="GET" href="summary.xpl" output-type="application/xhtml+xml">
                         <xproc:option name="base" value="riap://component/opennex/"/>
@@ -15,7 +15,7 @@
                      </xproc:method>
                   </attribute>
                </route>
-               <route match="/data/{dset}/{monthday}/{size}/{partition}" mode="equals" ref="xproclet">
+               <route match="/{dset}/{monthday}/{size}/{partition}" mode="equals" ref="xproclet">
                   <attribute name="xproc.configuration">
                      <xproc:method name="GET" href="partition.xpl" output-type="application/xhtml+xml">
                         <xproc:option name="base" value="riap://component/opennex/"/>

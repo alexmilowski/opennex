@@ -7,8 +7,7 @@
    <client protocol="HTTP"/>
    <client protocol="HTTPS"/>
 
-   <!--<include href="../thirdparty/xproclet/modules/mod-xproc/mod-xproc.xml"/> -->
-   <include href="file:///Users/alex/workspace/github/xproclet/mod-xproc/dist/mod-xproc/mod-xproc.xml"/>
+   <include href="../../xproclet/mod-xproc/dist/mod-xproc/mod-xproc.xml"/>
    
    <application name="opennex">
       <content match="/" href="https://s3.amazonaws.com/milowski-opennex/">
@@ -20,9 +19,9 @@
    <server protocol="HTTP" address="*" port="8080">
       <host name="localhost">
          <attribute name="xproc.cache" ref="xproc.cache"/>
-         <content match="/docs" href="docs"/>
          <content match="/explore/" href="explore"/>
          <include href="app.xml"/>
+         <content match="/" href="docs"/>
       </host>
    </server>
 </component>

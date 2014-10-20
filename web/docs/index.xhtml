@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+       <title>NASA Earth Exchange (NEX) Downscaled Climate Projections (NEX-DCP30)</title>
+       <link rel="stylesheet" type="text/css" href="site.css"/>
+    </head>
+    <body>
+       <header>
+          <h1>NASA Earth Exchange (NEX) Downscaled Climate Projections</h1>
+          <p>This service provides the OpenNEX NEX-DCP30 data set as web-accessible data annotated with RDFa.</p>
+       </header>
+       <section>
+          <h2>Demonstrations</h2>
+          <p>View a <a href="./explore/">demonstration</a> that lets you browse the data via a map-based <q>heat map</q>.</p>
+       </section>
+       <section>
+          <h2>Data Access</h2>
+          <p>The data is stored in the native grid resolution of 1/120° but it is summarized in 1°, 1/2°, 1/4° quadrangles.  Each summary contains a link to a partition (a quadrangle)
+             of the data whose dimensions are of the same size (e.g., 1/2° summary points to 1/2° quadrangles).  The partition is labeled with a 
+             <a href="http://www.pantabular.org">quadrangle sequence number</a>.</p>
+          <p>Each summary is accessible at:</p>
+          <pre>./data/{name}/{yearMonth}/{resolution}/</pre>
+          <p>where:</p>
+          <ul>
+             <li><em>name</em> — a data set name (e.g., 'avg-rcp85')</li>
+             <li><em>yearMonth</em> — the year and month for the summary (e.g., '2014-10')</li>
+             <li><em>resolution</em> — the summary size in 1/120° increments that must be one of 30, 60, or 120 for 1/4°, 1/2°, 1°, respectively</li>
+          </ul>
+          <p>Each quadrangle partition is accessible at:</p>
+          <pre>./data/{name}/{yearMonth}/{resolution}/{partition}</pre>
+          <p>where <em>partition</em> is the sequence number of the quadrangle.</p>
+          
+          <p>For example, to access a 1/2° summary for 2014-10 of the average model, you use:</p>
+          <pre><a href="./data/avg-rcp85/2014-10/60/" target="data">./data/avg-rcp85/2014-10/60/</a></pre>
+          <p>The returned summary has links to various partitions.  These partitions are accessible individually:</p>
+          <pre><a href="./data/avg-rcp85/2014-10/60/60235" target="data">./data/avg-rcp85/2014-10/60/60235</a></pre>
+       </section>
+    </body>
+</html>
