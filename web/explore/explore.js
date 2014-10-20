@@ -1,6 +1,7 @@
 var server = window.location.href.substring(0,window.location.href.lastIndexOf('/'));
 server = server.substring(0,server.lastIndexOf('/'));
 var mapExplorer = new MapExplorer(server+"/data/avg-rcp85/",60);
+//var mapExplorer = new MapExplorer(server+"/data/quartile75/",60);
 
 window.addEventListener("load",function() {
 
@@ -16,16 +17,17 @@ window.addEventListener("load",function() {
          prefetch.push(formatYearMonth(year,i+1));
       }
    }
+   var showFirstMonth = function(month) {
+      if (month == prefetch[0]) {
+         mapExplorer.showMonth(month);
+         loading.style.display = "none";
+      }
+   }
    console.log("Current: "+prefetch[0]);
    mapExplorer.init(
       document.getElementById("map"),
       prefetch,
-      function(month) {
-         if (month == prefetch[0]) {
-            mapExplorer.showMonth(month);
-            loading.style.display = "none";
-         }
-      }
+      showFirstMonth
    );
    
    var currentMonth = document.getElementById("current-month");
@@ -77,6 +79,19 @@ window.addEventListener("load",function() {
 
    }
    
+   document.getElementById("avg-rcp85").addEventListener("click",function() {
+      loading.style.display = "block";
+      mapExplorer.setDataSet(server+"/data/avg-rcp85/",prefetch,showFirstMonth);
+   },false);
+   document.getElementById("quartile75").addEventListener("click",function() {
+      try {
+         loading.style.display = "block";
+         mapExplorer.setDataSet(server+"/data/quartile75/",prefetch,showFirstMonth);
+      } catch (ex) {
+         console.log(ex);
+      }
+   },false);
+   
 },false)
 
 function MapExplorer(server,resolution) {
@@ -119,6 +134,20 @@ MapExplorer.prototype.init = function(mapElement,months,onfinish) {
          app.showDetail(e.latlng.lat,e.latlng.lng);
       },1);
    });
+}
+
+MapExplorer.prototype.setDataSet = function(url,months,onfinish) {
+   if (this.currentLayer) {
+      this.map.removeLayer(this.currentLayer);
+      this.currentLayer = null;
+   }
+   this.layers = {};
+   this.server = url;
+   if (months) {
+      for (var i=0; i<months.length; i++) {
+         this.fetch(months[i],onfinish);
+      }
+   }
 }
 
 MapExplorer.prototype.fetch = function(month,onfinish) {

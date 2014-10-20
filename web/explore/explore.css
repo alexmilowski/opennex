@@ -50,12 +50,46 @@ h1,h2,h3,h4,h5 {
    width:100%;
 }
 
+#dataset {
+   z-index: 10;
+   position: absolute;
+   text-align: center;
+   bottom: 1em;
+   width: 100%;
+}
+
+#dataset h3 {
+   display: none;
+}
+
+#dataset button {
+   display: inline-block;
+   width: 22%;
+   margin-right: 2%;
+   border-style: none;
+   font-size: 1.25em;
+   background-color: rgb(75,75,75);
+   color: white;
+   text-transform: uppercase;
+   text-align: center;
+   padding-left: 0em;
+   padding-right: 0em;
+}
+
 #months-widget {
    z-index: 10;
    position: absolute;
    top: 2em;
    right: 1em;
    text-align: center;
+}
+
+#months-widget h2 {
+   margin-bottom: 0.5em;
+}
+
+#months-widget h3 {
+   margin-top: 0em;
 }
 
 #months-widget input[type=range] {
@@ -84,10 +118,14 @@ h1,h2,h3,h4,h5 {
 
    top: auto;
    right: auto;
-   bottom: 1em;
+   bottom: 3em;
    left: 0em;
    width: 100%;
    font-size: 2em;
+}
+
+#months-widget h3 {
+   margin-top: 0em;
 }
 
 #months-widget input[type=range] {
@@ -101,6 +139,18 @@ h1,h2,h3,h4,h5 {
 
 #color-legend > div:first-of-type, #color-legend > div:last-of-type {
    width: 8%;
+}
+
+#dataset {
+   font-size: 1.75em;
+}
+
+#dataset button {
+   padding-top: 0.25em;
+   padding-bottom: 0.25em;
+   text-align: center;
+   padding-left: 0em;
+   padding-right: 0em;
 }
 
 
