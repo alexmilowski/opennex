@@ -9,6 +9,8 @@ window.addEventListener("load",function() {
    formatYearMonth = function(year,month) {
       return year+"-"+(month<10 ? "0"+month : month)      
    };
+   var titleBlock = document.getElementById("title");
+   titleBlock.innerHTML = document.getElementById("avg-rcp85").textContent;
    var now = new Date();
    var year = now.getFullYear()
    var prefetch = [formatYearMonth(year,now.getMonth()+1)];
@@ -45,7 +47,7 @@ window.addEventListener("load",function() {
       currentMonth.innerHTML = selected
    },false);
    var lastSelected = null;
-   slider.addEventListener("change",function() {
+   var sliderChanged = function() {
       if (slider.timer) {
          clearTimeout(slider.timer);
       }
@@ -58,7 +60,8 @@ window.addEventListener("load",function() {
          });
       },200);
       slider.focus();
-   },false);
+   }
+   slider.addEventListener("change",sliderChanged,false);
    var selectedMonth = monthLabel(slider.value);
    currentMonth.innerHTML = selectedMonth;
    
@@ -81,16 +84,31 @@ window.addEventListener("load",function() {
    
    document.getElementById("avg-rcp85").addEventListener("click",function() {
       loading.style.display = "block";
+      titleBlock.innerHTML = document.getElementById("avg-rcp85").textContent;
       mapExplorer.setDataSet(server+"/data/avg-rcp85/",prefetch,showFirstMonth);
    },false);
    document.getElementById("quartile75").addEventListener("click",function() {
-      try {
-         loading.style.display = "block";
-         mapExplorer.setDataSet(server+"/data/quartile75/",prefetch,showFirstMonth);
-      } catch (ex) {
-         console.log(ex);
-      }
+      loading.style.display = "block";
+      titleBlock.innerHTML = document.getElementById("quartile75").textContent;
+      mapExplorer.setDataSet(server+"/data/quartile75/",prefetch,showFirstMonth);
    },false);
+   
+   var makeSliderChanger = function(change) {
+      return function() {
+         var value = parseInt(slider.value)+change;
+         if (value<0 || value>1127) {
+            return;
+         }
+         slider.value = value;
+         sliderChanged();
+         var selected = monthLabel(slider.value);
+         currentMonth.innerHTML = selected
+      }      
+   }
+   document.getElementById("prev-month").addEventListener("click",makeSliderChanger(-1),false)
+   document.getElementById("prev-year").addEventListener("click",makeSliderChanger(-12),false)
+   document.getElementById("next-month").addEventListener("click",makeSliderChanger(1),false)
+   document.getElementById("next-year").addEventListener("click",makeSliderChanger(12),false)
    
 },false)
 

@@ -92,6 +92,31 @@ h1,h2,h3,h4,h5 {
    margin-top: 0em;
 }
 
+#months-widget p {
+   margin-top: 0em;
+   margin-bottom: 0em;
+}
+
+#months-widget p img {
+   height: 1.5em;
+   vertical-align: middle;
+}
+
+#months-widget p img.next {
+   margin-left: 0.25em;   
+}
+
+#months-widget #prev-month img, #months-widget #next-month img {
+   height: 1.4em;
+   padding-top: 0.05em;
+   padding-bottom: 0.05em;
+}
+
+#months-widget p img.prev {
+   margin-right: 0.25em;   
+}
+
+
 #months-widget input[type=range] {
    width: 30em;
    -webkit-appearance: none;
