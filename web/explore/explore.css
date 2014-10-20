@@ -12,6 +12,13 @@ h1,h2,h3,h4,h5 {
    font-family: sans-serif;
 }
 
+#loading {
+   display: block;
+   position: absolute;
+   top: 47.5%;
+   left: 47.5%;
+}
+
 #map {
    position:absolute; 
    top:0; 
@@ -28,5 +35,40 @@ h1,h2,h3,h4,h5 {
 }
 
 #months-widget input[type=range] {
-   width: 20em;
+   width: 30em;
+   -webkit-appearance: none;
+}
+
+
+#months-widget input::-webkit-slider-thumb {
+   -webkit-appearance: none;
+   height: 1.25em;
+   width: 0.5em;
+   background: rgb(150,150,150);
+   border: none;
+   border-radius: 5%;
+   margin-top: -0.25em;
+}
+#months-widget input::-webkit-slider-runnable-track {
+   height: 0.75em;
+   background: rgb(75,75,75);
+}
+
+@media screen and (max-device-width: 400px) and (max-device-height: 800px) {
+
+#months-widget {
+
+   top: auto;
+   right: auto;
+   bottom: 1em;
+   left: 0em;
+   width: 100%;
+   font-size: 2em;
+}
+
+#months-widget input[type=range] {
+   font-size: 1.5em;
+   width: 90%;
+}
+
 }

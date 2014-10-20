@@ -4,6 +4,7 @@ var mapExplorer = new MapExplorer(server+"/data/avg-rcp85/",60);
 
 window.addEventListener("load",function() {
 
+   var loading = document.getElementById("loading");
    formatYearMonth = function(year,month) {
       return year+"-"+(month<10 ? "0"+month : month)      
    };
@@ -22,6 +23,7 @@ window.addEventListener("load",function() {
       function(month) {
          if (month == prefetch[0]) {
             mapExplorer.showMonth(month);
+            loading.style.display = "none";
          }
       }
    );
@@ -48,7 +50,10 @@ window.addEventListener("load",function() {
       var selected = monthLabel(slider.value);
       slider.timer = setTimeout(function() {
          slider.timer = null;
-         mapExplorer.showMonth(selected,true);
+         loading.style.display = "block";
+         mapExplorer.showMonth(selected,true,function() {
+            loading.style.display = "none";
+         });
       },200);
       slider.focus();
    },false);
@@ -162,7 +167,7 @@ MapExplorer.prototype.createLayer = function(month,xhtml,properties) {
    console.log("Elapsed: "+(info.end.getTime() - info.start.getTime()));
 }
 
-MapExplorer.prototype.showMonth = function(month,fetch) {
+MapExplorer.prototype.showMonth = function(month,fetch,onfinish) {
    var info = this.layers[month];
    if (info) {
       console.log("Showing "+month);
@@ -171,11 +176,17 @@ MapExplorer.prototype.showMonth = function(month,fetch) {
       }
       this.currentLayer = info.layer;
       this.map.addLayer(info.layer);
+      if (onfinish) {
+         onfinish();
+      }
    } else if (fetch) {
       var app = this;
       this.lastSelected = month;
       this.fetch(month,function() {
          app.showMonth(app.lastSelected);
+         if (onfinish) {
+            onfinish();
+         }
       });
    }
    
