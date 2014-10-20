@@ -81,17 +81,28 @@ window.addEventListener("load",function() {
       box.style.backgroundColor = "rgb("+color[0]+","+color[1]+","+color[2]+")";
 
    }
-   
-   document.getElementById("avg-rcp85").addEventListener("click",function() {
-      loading.style.display = "block";
-      titleBlock.innerHTML = document.getElementById("avg-rcp85").textContent;
-      mapExplorer.setDataSet(server+"/data/avg-rcp85/",prefetch,showFirstMonth);
-   },false);
-   document.getElementById("quartile75").addEventListener("click",function() {
-      loading.style.display = "block";
-      titleBlock.innerHTML = document.getElementById("quartile75").textContent;
-      mapExplorer.setDataSet(server+"/data/quartile75/",prefetch,showFirstMonth);
-   },false);
+
+   var makeDSetAction = function(name) {
+      return function() {
+         loading.style.display = "block";
+         titleBlock.innerHTML = document.getElementById(name).textContent;
+         var month =  mapExplorer.current ? mapExplorer.current.month : null;
+         mapExplorer.setDataSet(server+"/data/"+name+"/");
+         if (month) {
+            mapExplorer.showMonth(month,true,function() {
+               loading.style.display = "none";
+            });
+         } else {
+            mapExplorer.showMonth(prefetch[0],true,function() {
+               loading.style.display = "none";
+            });
+         }
+      }      
+   }
+   var dsets = ["avg-rcp85","quartile75"];
+   for (var i=0; i<dsets.length; i++) {
+      document.getElementById(dsets[i]).addEventListener("click",makeDSetAction(dsets[i]),false);
+   }
    
    var makeSliderChanger = function(change) {
       return function() {
@@ -155,9 +166,9 @@ MapExplorer.prototype.init = function(mapElement,months,onfinish) {
 }
 
 MapExplorer.prototype.setDataSet = function(url,months,onfinish) {
-   if (this.currentLayer) {
-      this.map.removeLayer(this.currentLayer);
-      this.currentLayer = null;
+   if (this.current) {
+      this.map.removeLayer(this.current.layer);
+      this.current = null;
    }
    this.layers = {};
    this.server = url;
@@ -238,7 +249,8 @@ MapExplorer.prototype.createLayer = function(month,xhtml,properties) {
          }
       }
    }
-   info = {
+   var info = {
+      month: month,
       end: new Date(),
       layer: layerGroup
    };
@@ -254,10 +266,11 @@ MapExplorer.prototype.showMonth = function(month,fetch,onfinish) {
    var info = this.layers[month];
    if (info) {
       console.log("Showing "+month);
-      if (this.currentLayer) {
-         this.map.removeLayer(this.currentLayer);
+      if (this.current) {
+         this.map.removeLayer(this.current.layer);
       }
-      this.currentLayer = info.layer;
+      this.current = info;
+      
       this.map.addLayer(info.layer);
       if (onfinish) {
          onfinish();
