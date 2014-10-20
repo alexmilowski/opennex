@@ -43,7 +43,7 @@
                <li>Often, data formats used by professional science</li>
                <li>are difficult to process</li>
                <li>and inaccessible on the Web</li>
-               <li>while possibly justified</li>
+               <li>while justified for their own purposes</li>
                <li>they leave out other government</li>
                <li>and business agencies</li>
                <li>as well as citizen scientists.</li>
@@ -61,19 +61,27 @@
       <div class="slide">
          <h1>Summary of Solution</h1>
          <div class="two-column">
-            <ul style="margin-top: 2em">
-               <li>The OpenNEX NEX-DCP30 data has been transformed</li>
-               <li>into Web accessible data</li>
-               <li>using RDFa as a <q>semantic web</q> encoding</li>
-               <li>partitioned into quadrangles</li>
-               <li>so that it is sized appropriately</li>
-               <li>for use within Web</li>
-               <li>by client-side browser applications.</li>
-            </ul>
             <div>
-               <h2><p>View a <a href="http://data.pantabular.org/opennex/explore/" target="new">demo online</a>!</p></h2>
-               <img src="quadrangles.svg" style="width: 100%"/>
+               <ul>
+                  <li>The OpenNEX NEX-DCP30 data has been transformed</li>
+                  <li>into Web accessible data</li>
+                  <li>using RDFa as a <q>semantic web</q> encoding</li>
+                  <li>partitioned into quadrangles</li>
+                  <li>so that it is sized appropriately</li>
+                  <li>for use within Web</li>
+                  <li>by client-side browser applications.</li>
+               </ul>
             </div>
+            <div>
+               <h2>View a <a href="http://data.pantabular.org/opennex/explore/" target="new">demo online</a>!</h2>
+               <img src="quadrangles.svg" style="width: 70%"/>
+            </div>
+            <div class="clear">
+               <p>Data accessible by URIs:</p>
+               <p class="indent"><a href="http://data.pantabular.org/opennex/data/avg-rcp85/2006-01/60/" target="data">http://data.pantabular.org/opennex/data/{name}/{yearMonth}/{size}/</a></p>
+               <p class="indent"><a href="http://data.pantabular.org/opennex/data/avg-rcp85/2006-01/60/60235" target="data">http://data.pantabular.org/opennex/data/{name}/{yearMonth}/{size}/{partition}</a></p>
+            </div>
+               
          </div>
       </div>
       <div class="slide">
@@ -86,33 +94,37 @@
                   <li>that can be made smaller by handling non-data (e.g., fill values)</li>
                </ul>
             </li>
-            <li>Lower resolution summaries (e.g. 1/2°) can provide quick visualizations requiring less space.</li>
-            <li>Data needs to be provided for quick access by Web-based application.</li>
-            <li><p>Use of CORS enables access:</p>
+            <li>
+               <p>The OpenNEX NEX-DCP30 data is:</p>
                <ul>
-                  <li><a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">Cross-orign resource sharing (CORS)</a></li>
-                  <li>enables data services</li>
-                  <li>to be accessed by any website.</li>
+                  <li>Processed via map reduce on AWS EMR (Hadoop) </li>
+                  <li>to summarize, partition, and store</li>
+                  <li>into AWS S3</li>
                </ul>
             </li>
+            <li>Goal is to provide quick access to Web-based application.</li>
             <li>RDFa annotations provide scientific contexts (e.g. quantities, domains, locations, etc.)</li>
+            <li>Demonstration Web browser applications shows the use of data within visualizations as a browser-side computation.</li>
          </ul>
       </div>
       <div class="slide">
          <h1>Solution Details</h1>
          <div class="two-column">
-            <ul style="margin-top: 2em">
-               <li>Data is extracted from the OpenNEX datasets</li>
-               <li>by utilizing map reduce on AWS EMR (Hadoop) </li>
-               <li>to reorganize, summarize, and store</li>
-               <li>data into AWS S3</li>
-               <li>exposed by web services</li>
-               <li>hosted on AWS EC2 instances</li>
-               <li>served up to various browser applications</li>
-               <li>encoded via RDFa</li>
-               <li>accessed via CORS requests</li>
-               <li>and render by browser applications.</li>
-            </ul>
+            <div>
+               <p>Use of CORS enables access:</p>
+               <ul>
+                  <li><a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">Cross-origin resource sharing (CORS)</a></li>
+                  <li>enables data services</li>
+                  <li>to be accessed by any website.</li>
+               </ul>
+               <p>Web services</p>
+               <ul>
+                  <li>hosted on AWS EC2 instances</li>
+                  <li>serve up DATA to various browser applications</li>
+                  <li>encoded as RDFa data.</li>
+               </ul>
+               <p>Data extraction process runs one time only and results are re-used.</p>
+            </div>
             <img src="aws-solution.svg"/>
          </div>
       </div>

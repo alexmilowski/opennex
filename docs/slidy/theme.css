@@ -343,3 +343,7 @@ div.slide dd p {
 div.slide dl + * {
    clear: both;
 }
+
+.indent {
+   margin-left: 2em;
+}

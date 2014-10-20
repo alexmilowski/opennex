@@ -12,14 +12,13 @@
          capable of utilizing the OWP to communicate their interpretations through interactive
          visualizations or computations; helping bridge the gaps between professional scientists and
          the public at large.</para>
-       <para>Our solution involes transforming the OpenNEX NEX-DCP30 <emphasis role="italic"
-               ><citation>nex-dcp30</citation></emphasis> climate projections into Web sized data
+       <para>Our solution involes transforming the OpenNEX NEX-DCP30 <citation>nex-dcp30</citation> climate projections into Web sized data
          resources native to the Web.  Utilizing the AWS infratructure, it transforms and hosts the
          data in various ways to enable the browser to be a platform for interacting with the
          climate data.</para>
       <para>We demonstrate the result by showing browser-based applications (see
             <code>http://data.pantabular.org/opennex/explore/</code>).  We use off-the-shelf
-         libraries commonly used within the Web community for map-based applications to show how our
+         libraries <citation>leaflet</citation> commonly used within the Web community for map-based applications to show how our
          system facilitates the use of climate data.</para>
        <mediaobject>
           <imageobject>
@@ -44,5 +43,12 @@
          <author><personname>Trasher, B.</personname></author>, <author><personname>Xiong, J.</personname></author>, <author><personname>Wang, W.</personname></author>, <author><personname>Melton, F.</personname></author>, <author><personname>Michaelis, A.</personname></author>, and <author><personname>R. Nemani</personname></author>, 
          <pubdate>2013</pubdate>. ,
          <bibliomset role="journal"><title>Transactions American Geophysical Union (in review).</title></bibliomset></bibliomixed>
+      <bibliomixed xml:id="leaflet" xmlns:rdfa="http://www.milowski.com/vocab/rdfa/"
+         xmlns:h="http://www.w3.org/1999/xhtml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+         <citetitle>Leaflet</citetitle>, <author>
+            <personname>Vladimir Agafonkin</personname>
+         </author>
+         <bibliomisc><link xlink:href="http://leafletjs.com"/></bibliomisc>
+      </bibliomixed>
    </bibliography>
 </article>
