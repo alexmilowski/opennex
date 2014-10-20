@@ -6,6 +6,7 @@ body {
    margin-bottom: 0em;
    margin-left: 0em;
    margin-right: 0em;
+   font-family: serif;
 }
 
 h1,h2,h3,h4,h5 {
@@ -19,6 +20,23 @@ h1,h2,h3,h4,h5 {
    left: 47.5%;
 }
 
+#color-legend {
+   z-index: 10;
+   position: absolute;
+   top: 0.5em;
+   left: 5%;
+   width: 90%;
+   text-align: center;
+}
+
+#color-legend > div {
+   display: inline-block;
+   width: 6%;
+   padding-top: 0.25em;
+   padding-bottom: 0.25em;
+   font-weight: bold;
+}
+
 #map {
    position:absolute; 
    top:0; 
@@ -29,7 +47,7 @@ h1,h2,h3,h4,h5 {
 #months-widget {
    z-index: 10;
    position: absolute;
-   top: 1em;
+   top: 2em;
    right: 1em;
    text-align: center;
 }

@@ -61,6 +61,20 @@ window.addEventListener("load",function() {
    currentMonth.innerHTML = selectedMonth;
    
    slider.focus();
+
+   var colorLegend = document.getElementById("color-legend");
+
+   for (var t=MapExplorer.cmin; t<=MapExplorer.cmax; t+=5) {
+      var box = document.createElement("div");
+      var prefix = t==MapExplorer.cmin ? "< " : "";
+      var suffix = t==MapExplorer.cmax ? " >" : "";
+      box.appendChild(document.createTextNode(prefix+t.toString()+suffix));
+      colorLegend.appendChild(box);
+      var color = HeatMap.color(MapExplorer.cmin,MapExplorer.cmax,MapExplorer.adjustTemperature(t))
+      box.style.backgroundColor = "rgb("+color[0]+","+color[1]+","+color[2]+")";
+      box.style.opacity = 0.5;
+
+   }
    
 },false)
 
@@ -68,6 +82,24 @@ function MapExplorer(server,resolution) {
    this.server = server;
    this.layers = {};
    this.resolution = typeof resolution == "undefined" ? 60 : resolution
+}
+
+MapExplorer.cmin = -20;
+MapExplorer.cmax = 40;
+MapExplorer.adjustTemperature = function(c) {
+   if (c<=MapExplorer.cmin) {
+      return MapExplorer.cmin;
+   }
+   if (c>=MapExplorer.cmax) {
+      return MapExplorer.cmax;
+   }
+   if (c>=30) { // [30,40] -> [20,40]
+      return ((c - 30)/(MapExplorer.cmax-30))*(MapExplorer.cmax-20) + 20;
+   } else if (c>=10 && c<30) { // [10,30] -> [5,20]
+      return ((c-10)/20)*15 + 5;
+   } else { // [-20,10] -> [-20,5]
+      return ((c+20)/(10-MapExplorer.cmin))*(5-MapExplorer.cmin) + -20;
+   }
 }
 
 MapExplorer.prototype.init = function(mapElement,months,onfinish) {
@@ -138,6 +170,9 @@ MapExplorer.prototype.createLayer = function(month,xhtml,properties) {
    
    var layerGroup = L.layerGroup();
    
+   var cmin = -20;
+   var cmax = 40;
+   
    var items = xhtml.data.getValues(summary.data.id,"pan:item");
    var table = xhtml.getElementsBySubject(items[0])[0];
    for (row=1; row<table.rows.length; row++) {
@@ -147,10 +182,10 @@ MapExplorer.prototype.createLayer = function(month,xhtml,properties) {
          var k = s.length>0 ? parseFloat(s) : 0.0;
          if (k>0) {
             var c = k - 273.15;
-            var color = HeatMap.color(-25,45,c)
+            var color = HeatMap.color(MapExplorer.cmin,MapExplorer.cmax,MapExplorer.adjustTemperature(c))
             var lat = box[0] - (row-1)*scale;
             var lon = box[1] + (col-1)*scale;
-            var rect = L.rectangle([[lat,lon],[lat-scale,lon+scale]], {fill: true, color: "rgb("+color[0]+","+color[1]+","+color[2]+")", weight: 0, fillOpacity: 0.33});
+            var rect = L.rectangle([[lat,lon],[lat-scale,lon+scale]], {fill: true, color: "rgb("+color[0]+","+color[1]+","+color[2]+")", weight: 0, fillOpacity: 0.5});
             layerGroup.addLayer(rect);
          }
       }
