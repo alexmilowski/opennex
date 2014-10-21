@@ -13,6 +13,24 @@
        <section>
           <h2>Demonstrations</h2>
           <p>View a <a href="./explore/">demonstration</a> that lets you browse the data via a map-based <q>heat map</q>.</p>
+          <section>
+             <h3>How it Works</h3>
+             <p>The demonstration uses <a href="http://leafletjs.com">Leaflet</a>  to display a map
+               and then adds an overlay of a heatmap of the temperature for a particular year and
+               month. There is a slider control with buttons to the left or right to select a
+               particular year and month or sequence through them. At the bottom of the page, there
+               are buttons for selecting one of four data sets produced for NEX-DCP30.</p>
+            <p>The heat map application reads the temperature data, received as tables with RDFa
+               annotations, directly from the Web, and uses simple SVG overlays to draw onto the
+               map. All the rendering, including the mashup with the underlying map, zooms and
+               scrolling, is done on the client. The application uses the 1/2 degree data, but it
+               would only take a small change to use a different scale, or allow changes between
+               scales.</p>
+            <p>The raw data is accessible from the same Web server as the Web application. This is
+               not a requirement---the application can be hosted anywhere, as the data services all
+               use <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing"
+               >CORS</a>.</p>
+          </section>
        </section>
        <section>
           <h2>Data Access</h2>

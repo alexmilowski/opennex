@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html>
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
       <title>OpenNEX on the Web</title>
@@ -9,34 +9,38 @@
       <meta name="creator" content="R. Alexander Miłowski"/>
       <meta name="pubdate" content="2014-10-19"/>
       <link rel="stylesheet" type="text/css" href="slidy/slidy.css"/>
-      <link rel="stylesheet" type="text/css" href="slidy/theme.css" />
+      <link rel="stylesheet" type="text/css" href="slidy/theme.css"/>
       <script type="text/javascript" src="slidy/slidy.js"/>
+      <!--
       <script type="text/javascript">w3c_slidy.mouse_click_enabled = false;</script>
+      -->
    </head>
    <body>
       <div class="background">
          <!--
          <header><div class="logo-ischool" ><img src="slidy/ischool-logo.png"/></div><div class="logo-ilcc" ><img src="slidy/crest.gif"/></div></header>
          -->
-         <footer><img class="ilcc" src="slidy/ilcc-desc.png"/><img class="ischool" src="slidy/ischool-logo.jpg" title="School of Information, Univesity of California, Berkeley"/></footer>
+         <footer><img class="ilcc" src="slidy/infEdin.png" title="School of Informatics, University of Edinburgh" style="width: 2.8em; margin-bottom: 4em"/><img class="ischool" src="slidy/ischool-logo.jpg" title="School of Information, University of California, Berkeley"/></footer>
       </div>
       <div class="slide cover title">
          <hgroup>
             <h1>OpenNEX on the Web</h1>
             <h2>October 21, 2014</h2>
          </hgroup>
-         <p>A project to summarize and partition the OpenNEX data sets for use within the Open Web Platform (OWP).  The solution provides the data infrastructure to enable Web applications
-         to use NEX-DCP30 data set within the browser for client-side rendering and computation.</p>
+         <p>A project to summarize and partition the OpenNEX data sets for use
+within the Open Web Platform (OWP).  The solution provides the data
+infrastructure to enable a wide range of Web applications
+         to use NEX-DCP30 data sets within the browser for client-side rendering and computation.</p>
          <div class="two-column">
          <div class="author">
             <p><a href="http://www.milowski.com/" rel="name">R. Alexander Miłowski</a></p>
             <p><a href="mailto:milowski@ischool.berkeley.edu" rel="email">milowski@ischool.berkeley.edu</a></p>
-            <p><img src="slidy/ischool-logo.jpg" title="School of Information, Univesity of California, Berkeley"/></p>
+            <p><img src="slidy/ischool-logo.jpg" title="School of Information, University of California, Berkeley"/></p>
          </div>
          <div class="author">
             <p><a href="http://www.ltg.ed.ac.uk/~ht/" rel="name">Henry S. Thompson</a></p>
             <p><a href="mailto:ht@inf.ed.ac.uk" rel="email">ht@inf.ed.ac.uk</a></p>
-            <p><img src="slidy/ilcc-desc.png" title="Institute for Language, Cognition and Computation"/></p>
+            <p><img src="slidy/infEdin.png" title="School of Informatics, University of Edinburgh"/></p>
          </div>
          </div>
       </div>
@@ -44,22 +48,43 @@
          <h1>Problem Description</h1>
          <div class="two-column">
             <ul>
-               <li>Often, data formats used by professional science</li>
-               <li>are difficult to process</li>
-               <li>and inaccessible on the Web</li>
-               <li>while justified for their own purposes</li>
-               <li>they leave out other government</li>
-               <li>and business agencies</li>
-               <li>as well as citizen scientists.</li>
+               <li>Often, data formats used by professional science are difficult to process
+                <ul>
+                 <li>and inaccessible to the generic technologies which make
+Web applications easy to build</li>
+                </ul>
+               </li>
+               <li>This confines them to use by their originators
+                <ul>
+                 <li>Effectively excluding other government agencies,
+businesses and citizen scientists</li>
+                </ul>
+               </li>
+             <li>Documenting and promoting are not enough
+              <ul>
+               <li>Nor is commissioning illustrative applications</li>
+              </ul>
+             </li>
             </ul>
+          <ul><li>In order to <em>really</em> make  a
+wide public impact with the OpenNEX data
+              <ul>
+               <li>We need to enable access to that data by the technologies
+of the OpenWEB platform
+               </li>
+               <li>So that <em>everyone</em> can build applications that
+showcase and make use of OpenNEX data</li>
+              </ul>
+             </li>
+           <li>There's a huge untapped resource out there
             <ul>
-               <li>We need to enable</li>
-               <li>access to data sets</li>
-               <li>from within the technologies</li>
-               <li>of the Open Web Platform</li>
-               <li>so that everyone</li>
-               <li>has access to scientific data.</li>
+             <li>Web developers, both professional and amateur</li>
+             <li>Who <em>care</em> about climate issues</li>
+             <li>Who can put climate data to work</li>
+             <li><em>If</em> we meet them half-way</li>
             </ul>
+           </li>
+          </ul>
          </div>
       </div>
       <div class="slide">
@@ -67,50 +92,66 @@
          <div class="two-column">
             <div>
                <ul>
-                  <li>The OpenNEX NEX-DCP30 data has been transformed</li>
-                  <li>into Web accessible data</li>
-                  <li>using RDFa as a <q>semantic web</q> encoding</li>
-                  <li>partitioned into quadrangles</li>
-                  <li>so that it is sized appropriately</li>
-                  <li>for use within Web</li>
-                  <li>by client-side browser applications.</li>
+                  <li>We have transformed the OpenNEX NEX-DCP30 data
+                   <ul>
+                    <li>Into Web-native format</li>
+                    <li>HTML, with RDFa annotations</li>
+                   </ul>
+                  </li>
+                  <li>partitioned into quadrangles
+                   <ul>
+                    <li>So it can be downloaded in useful chunks</li>
+                    <li>For display and use in client-side browser applications</li>
+                    <li>Built using familiar OWP technologies</li>
+                   </ul>
+                  </li>
+                <li>Here's an example way in to the OpenNEX data:
+                 <ul>
+                  <li><a href="http://data.pantabular.org/opennex/data/avg-rcp85/2006-01/60/" target="data">http://data.pantabular.org/opennex/data/{name}/{yearMonth}/{size}/</a></li>
+                 </ul>
+                </li>
                </ul>
             </div>
             <div>
                <h2>View a <a href="http://data.pantabular.org/opennex/explore/" target="new">demo online</a>!</h2>
                <h3><a href="http://data.pantabular.org/opennex/">http://data.pantabular.org/opennex/</a></h3>
-               <img src="quadrangles.svg" style="width: 70%"/>
-            </div>
-            <div class="clear">
-               <p>Data accessible by URIs:</p>
-               <p class="indent"><a href="http://data.pantabular.org/opennex/data/avg-rcp85/2006-01/60/" target="data">http://data.pantabular.org/opennex/data/{name}/{yearMonth}/{size}/</a></p>
-               <p class="indent"><a href="http://data.pantabular.org/opennex/data/avg-rcp85/2006-01/60/60235" target="data">http://data.pantabular.org/opennex/data/{name}/{yearMonth}/{size}/{partition}</a></p>
+               <img src="quadrangles.svg" style="width: 65%"/>
             </div>
                
          </div>
       </div>
       <div class="slide">
          <h1>Use of Datasets</h1>
-         <ul>
+         <div class="two-column">
+          <ul>
             <li><p>The OpenNEX NEX-DCP30 climate data is produced at resolution 1/120°:</p>
                <ul>
                   <li>each partition (5 years) is about 1.3GB</li>
                   <li>each month is a smaller slice</li>
-                  <li>that can be made smaller by handling non-data (e.g., fill values)</li>
                </ul>
             </li>
             <li>
-               <p>The OpenNEX NEX-DCP30 data is:</p>
+               <p>We preprocess, host and deliver it for OWP use:</p>
                <ul>
                   <li>Processed via map reduce on AWS EMR (Hadoop) </li>
-                  <li>to summarize, partition, and store</li>
-                  <li>into AWS S3</li>
+                  <li>to summarize, partition, and store into AWS S3</li>
+                <li>For delivery as HTML</li>
                </ul>
             </li>
-            <li>Goal is to provide quick access to Web-based application.</li>
-            <li>RDFa annotations provide scientific contexts (e.g. quantities, domains, locations, etc.)</li>
-            <li>Demonstration Web browser applications shows the use of data within visualizations as a browser-side computation.</li>
          </ul>
+          <ul><li>This provides quick access for Web-native applications
+             <ul>
+              <li>In the <em>tiling</em> approach familiar to developers</li>
+             </ul>
+            </li>
+            <li>RDFa annotations provide scientific metadata (e.g. quantities, domains, locations, etc.)</li>
+            <li>Demonstration Web browser applications show the use of data within visualizations
+             <ul>
+             <li>Including a browser-side Barnes-interpolation computation</li>
+             </ul>
+            </li>
+          </ul>
+         </div>
       </div>
       <div class="slide">
          <h1>Solution Details</h1>
@@ -119,16 +160,15 @@
                <p>Use of CORS enables access:</p>
                <ul>
                   <li><a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">Cross-origin resource sharing (CORS)</a></li>
-                  <li>enables data services</li>
-                  <li>to be accessed by any website.</li>
+                  <li>enables our data services toolkit to be accessed by any website</li>
                </ul>
-               <p>Web services</p>
+               <p>Pre-partitioned OpenNEX data</p>
                <ul>
                   <li>hosted on AWS EC2 instances</li>
-                  <li>serve up DATA to various browser applications</li>
-                  <li>encoded as RDFa data.</li>
+                  <li>served to various browser applications</li>
+                  <li>addressed by URLs, delivered as HTML, with RDFa annotations</li>
+                
                </ul>
-               <p>Data extraction process runs one time only and results are re-used.</p>
             </div>
             <img src="aws-solution.svg"/>
          </div>

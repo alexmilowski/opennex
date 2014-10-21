@@ -60,7 +60,7 @@ Note: the brackets are not necessary and just represent the arguments you must s
 
 An AMI is available so you can run the Web server application directly:
 
-[https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-fcc04494](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-fcc04494)
+[https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-8a5bdfe2](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-8a5bdfe2)
 
 This web application is available at:
 

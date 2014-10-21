@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>OpenNEX on the Web</title>
+<style type="text/css">
+body {
+   margin: 0px;
+   min-width: 620px;
+   font-size: 1.2em;
+   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+   padding-left: 1em;
+   padding-right: 1em;
+   line-height: 1.25em;
+   background-color: rgb(255,255,255);
+}
+
+h1,h2,h3,h4,h5,h6 {
+   font-family: Helvetica, Arial, sans-serif;
+}          
+</style>
+</head>
+<body>
+<h1>OpenNEX on the Web</h1>
+<section>
+   <h2>Source Code</h2>
+   <p>The source is available on github at:</p>
+   <blockquote><code><a href="https://github.com/alexmilowski/opennex">https://github.com/alexmilowski/opennex</a></code></blockquote>
+   <p>There are full instructions for running the code at the github page.</p>
+</section>
+<section>
+   <h2>Live Demonstration</h2>
+   <p>A live demonstration of the use of the data is available at:</p>
+   <blockquote><code><a href="http://data.pantabular.org/opennex/explore/">http://data.pantabular.org/opennex/explore/</a></code></blockquote>
+   <p>with the data hosted at <code>http://data.pantabular.org/opennex/data/</code> where:</p>
+   <ul>
+      <li><code>./{name}/{yearMonth}/{resolution}/</code> is the summary for data set <em>name</em> (e.g., avg-rcp85, quartile75, quartile50, or quartile25) for year/month <em>yearMonth</em> (e.g., 2014-10) for the <em>resolution</em> (e.g., 30, 60, or 120) </li>
+      <li><code>./{name}/{yearMonth}/{resolution}/{partition}</code> is the raw data partitioned by quadrangle with sequence number <em>partition</em></li>
+   </ul>
+   <p>All data is returned as HTML with RDFa annotations.</p>
+</section>
+<section>
+   <h2>AMI for Running Demo</h2>
+   <p>AMI <a
+      href="https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-8a5bdfe2">ami-8a5bdfe2</a> 
+      is configured to run the Web application accessing the data
+            directly in S3. You can run this server on any instance type by m3.medium is more than
+            sufficient.  Once the server has started, just access the Website at the root of the
+            server on the default port (i.e., port 80).  The first time you access the server, it
+            compiles pipelines and bytecode and so the very first time you access the server it may
+            take longer than subsequent times.</p>
+</section>   
+</body>
+</html>

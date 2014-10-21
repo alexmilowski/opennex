@@ -1,30 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<article xmlns="http://docbook.org/ns/docbook"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    version="5.0">
+<?xml version='1.0' encoding='UTF-8'?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
     <title>OpenNEX on the Web</title>
     <section>
        <title>Overview</title>
-       <para>The Open Web Platform (OWP) <citation>owp</citation> is a platform of shared behaviors,
-         expected by publishers and authors, and a nexus for innovation, consolidation, and cost
-         efficiencies focused on those things that happen within the actions of the Web browser. Our
-         solution exposes the OpenNEX data so that interested parties (e.g., citizen scientists) are
-         capable of utilizing the OWP to communicate their interpretations through interactive
-         visualizations or computations; helping bridge the gaps between professional scientists and
-         the public at large.</para>
-       <para>Our solution involes transforming the OpenNEX NEX-DCP30 <citation>nex-dcp30</citation> climate projections into Web sized data
-         resources native to the Web.  Utilizing the AWS infratructure, it transforms and hosts the
-         data in various ways to enable the browser to be a platform for interacting with the
-         climate data.</para>
-      <para>We demonstrate the result by showing browser-based applications (see
-            <code>http://data.pantabular.org/opennex/explore/</code>).  We use off-the-shelf
-         libraries <citation>leaflet</citation> commonly used within the Web community for map-based applications to show how our
-         system facilitates the use of climate data.</para>
        <mediaobject>
           <imageobject>
-             <imagedata fileref="aws-solution.svg" scale="75"/>
+             <imagedata fileref="aws-solution.svg" scale="70"/>
           </imageobject>
        </mediaobject>
+       <para>The Open Web Platform (OWP) <citation>owp</citation> is the name for an expanded understanding of the modern Web browser: now a delivery platform for
+a wide range of applications, implemented on top of standardized behaviors, exploited by publishers and
+authors: a nexus for innovation, consolidation, and cost efficiencies. When data resources are available on the
+Web, OWP tools enable interested parties, ranging from domain specialists to citizen scientists, to deliver them in easily understood
+forms, such as interactive visualizations, helping to bridge the gap between professional scientists and the
+public at large.</para>
+       <para>Our approach to the OpenNEX challenge focussed on expanding the
+impact of OpenNEX by making the OpenNEX data
+available for easy access and use via the OWP, thus enabling the power of the
+network effect: not <emphasis>one</emphasis> app, but an enhanced opportunity
+for <emphasis>many</emphasis> people to develop <emphasis>many</emphasis> apps
+quickly and easily.</para>
+      <para>Utilizing a range of components of the AWS infrastructure, we have 
+delivered not only a substantial sample of OpenNEX
+         data, served in forms which enable the browser to be a platform for interacting with
+         climate data, but we have also constructed several browser-based applications which
+do just that (see
+            <link xlink:href="http://data.pantabular.org/opennex/explore/"/>).  We use
+off-the-shelf open source
+         libraries (e.g. <citation>leaflet</citation>, <citation>OpenStreetMap</citation>), commonly used within the Web community for map-based applications, to show how our
+         system facilitates the presentation and use of climate data.</para>
     </section>
    <bibliography>
       <title>Bibliography</title>
@@ -43,12 +47,15 @@
          <author><personname>Trasher, B.</personname></author>, <author><personname>Xiong, J.</personname></author>, <author><personname>Wang, W.</personname></author>, <author><personname>Melton, F.</personname></author>, <author><personname>Michaelis, A.</personname></author>, and <author><personname>R. Nemani</personname></author>, 
          <pubdate>2013</pubdate>. ,
          <bibliomset role="journal"><title>Transactions American Geophysical Union (in review).</title></bibliomset></bibliomixed>
-      <bibliomixed xml:id="leaflet" xmlns:rdfa="http://www.milowski.com/vocab/rdfa/"
-         xmlns:h="http://www.w3.org/1999/xhtml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+      <bibliomixed xml:id="leaflet" xmlns:rdfa="http://www.milowski.com/vocab/rdfa/" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:m="http://www.w3.org/1998/Math/MathML">
          <citetitle>Leaflet</citetitle>, <author>
             <personname>Vladimir Agafonkin</personname>
          </author>
          <bibliomisc><link xlink:href="http://leafletjs.com"/></bibliomisc>
       </bibliomixed>
+    <bibliomixed xml:id="OpenStreetMap">
+     <citetitle>OpenStreetMap</citetitle>
+     <bibliomisc><link xlink:href="http://www.openstreetmap.org/"/></bibliomisc>
+    </bibliomixed>
    </bibliography>
 </article>
