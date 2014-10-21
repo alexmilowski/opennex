@@ -26,7 +26,7 @@ Find a subset of files to process (e.g. quartile75) and run the list through the
 
 Store the files into S3 group into pairs using your bucket name (e.g., 'mybucket') and a prefix (e.g., 'quartile75').  This will create a set of groups of files to process that can be associated with each EMR (Hadoop) step.
 
-    make-input-bucket.sh mybucket quartile75 quartile75-*.txt
+    make-input-bucket.sh mybucket quartile75-input quartile75-*.txt
 
 ## Partitioning the Data using EMR
 
@@ -62,4 +62,17 @@ The script is invoked as:
     run-partition.sh <job-flow-id> <aws-key> <aws-secret> mybucket quartile75-input-1 quartile75-output quartile75 "#1"
 
 Note: the brackets are not necessary and just represent the arguments you must supply but I've omitted here.
+
+## Web Server AMI ##
+
+An AMI is available so you can run the Web server application directly:
+
+[https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-fcc04494](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-fcc04494)
+
+This web application is available at:
+
+[http://data.pantabular.org/opennex/](http://data.pantabular.org/opennex/)
+   
+
+
 
