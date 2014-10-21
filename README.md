@@ -1,11 +1,4 @@
-opennex
-=======
-
-Bootstrap actions:
-
-
-1/5 m1.medium = 8 parallel
-1/5 m1.large = 28 parallel
+#OpenNEX on the Web #
 
 ## Setup your bucket
 
