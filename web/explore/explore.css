@@ -155,8 +155,39 @@ h1,h2,h3,h4,h5 {
 
 #months-widget input[type=range] {
    font-size: 1.5em;
-   width: 90%;
+   width: 70%;
 }
+
+#months-widget p button {
+   width: 6em;
+   height: 5em;
+   vertical-align: middle;
+   margin-top: 0em;
+   text-align: center;
+   -webkit-appearance: none;
+   background-color: white;
+   border-top-width: 2px;
+   border-right-width: 2px;
+   border-bottom-width: 2px;
+   border-left-width: 2px;
+   border-top-style: outset;
+   border-right-style: outset;
+   border-bottom-style: outset;
+   border-left-style: outset;
+   border-top-color: buttonface;
+   border-right-color: buttonface;
+   border-bottom-color: buttonface;
+   border-left-color: buttonface;
+   box-sizing: border-box;
+   border-radius: 4px;
+}
+#months-widget p button img { 
+   height: 4.5em;
+}
+#months-widget #prev-month img, #months-widget #next-month img {
+   height: 4.2em;
+}  
+
 
 #color-legend {
    font-size: 2em;

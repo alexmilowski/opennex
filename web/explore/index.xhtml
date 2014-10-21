@@ -14,7 +14,10 @@
       <div id="months-widget">
          <h1 id="title"></h1>
          <h2>2006 to 2099</h2>
-         <p><button id="prev-year" title="previous year"><img class="prev" src="prev-year.svg"/></button><button id="prev-month" title="previous month"><img class="prev" src="prev-month.svg"/></button><input type="range" id="months-control" min="0" max="1127" value="0"/><button id="next-month" title="next month"><img class="next" src="next-month.svg"/></button><button id="next-year" title="next year"><img class="next" src="next-year.svg"/></button></p>
+         <p><span class="previous"><button id="prev-year" title="previous year"><img class="prev" src="prev-year.svg"/></button><button id="prev-month" title="previous month"><img class="prev" src="prev-month.svg"/></button></span>
+            <input type="range" id="months-control" min="0" max="1127" value="0"/>
+            <span class="next"><button id="next-month" title="next month"><img class="next" src="next-month.svg"/></button><button id="next-year" title="next year"><img class="next" src="next-year.svg"/></button></span>
+         </p>
          <h3 id="current-month"></h3>
       </div>
       <div id="dataset">
