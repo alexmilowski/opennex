@@ -10,6 +10,10 @@ h3 {
     font-size: 0.825em;
 }
 
+div.slide > .two-column {
+   margin-left: 1em;
+}
+
 .two-column > *{
    float: left;
    width: 45%;
