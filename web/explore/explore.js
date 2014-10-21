@@ -99,7 +99,7 @@ window.addEventListener("load",function() {
          }
       }      
    }
-   var dsets = ["avg-rcp85","quartile75"];
+   var dsets = ["avg-rcp85","quartile75","quartile50","quartile25"];
    for (var i=0; i<dsets.length; i++) {
       document.getElementById(dsets[i]).addEventListener("click",makeDSetAction(dsets[i]),false);
    }
